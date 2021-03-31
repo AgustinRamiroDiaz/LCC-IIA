@@ -152,7 +152,7 @@
     un índice de en qué orilla está la canoa (0 izquierda, 1 derecha)
     
     Restricción de estados:
-        i <= j en las tuplas
+        i <= j en las tuplas (i canibales y j misioneros)
 
     Estado incial:
         ((3, 3), (0, 0), 0)
@@ -174,12 +174,6 @@
 
         sólo si el estado resultante cumple la restricción de estado 
         y no se repiten otros estados anteriores
-
-
-
-
-
-
 
     BFS:
         [((3, 3), (0, 0), 0)]
@@ -241,5 +235,16 @@
             ((0, 0), (3, 3), 1),        meta!
             ... faltan expansiones
         ]
+
+4.
+
+Si h coincide, tenemos que anotar el criterio de elección.
+
+
+6.
+a_ h no es admisible pues h(E) = 14 > G2(E) = 12 
+(hacer cuadro completo con todos los casos e ir eligiendo el mínimo)
+
+b_
 """
 
