@@ -100,33 +100,31 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
-    
 
     nodes = util.Stack()
     nodes.push(problem.getStartState())
 
     nodesExplored = util.Counter({problem.getStartState(): 1})
 
-    parent = {}
-
+    
     while not nodes.isEmpty():
         node = nodes.pop()
 
         if problem.isGoalState(node):
             path = util.Queue()
             while problem.getStartState() != node:
-                node, action = parent[node]
+                node, action = nodesExplored[node]
                 path.push(action)
-
             return path.list
 
         for position, action, cost in problem.getSuccessors(node):
             if nodesExplored[position] == 0:
+                nodesExplored[position] = (node, action)
                 nodes.push(position)
-                nodesExplored[position] = 1
-                parent[position] = (node, action)
 
     return None
+
+
 
 
 
@@ -139,29 +137,48 @@ def breadthFirstSearch(problem):
 
     nodesExplored = util.Counter({problem.getStartState(): 1})
 
-    parent = {}
-
+    
     while not nodes.isEmpty():
         node = nodes.pop()
 
         if problem.isGoalState(node):
             path = util.Queue()
             while problem.getStartState() != node:
-                node, action = parent[node]
+                node, action = nodesExplored[node]
                 path.push(action)
-
             return path.list
 
         for position, action, cost in problem.getSuccessors(node):
             if nodesExplored[position] == 0:
+                nodesExplored[position] = (node, action)
                 nodes.push(position)
-                nodesExplored[position] = 1
-                parent[position] = (node, action)
 
     return None
 
 def uniformCostSearch(problem):
     "Search the node of least total cost first."
+    nodes = util.PriorityQueue()
+    nodes.push(problem.getStartState(), 69)
+
+    nodesExplored = util.Counter({problem.getStartState(): 1})
+
+    
+    while not nodes.isEmpty():
+        node = nodes.pop()
+
+        if problem.isGoalState(node):
+            path = util.Queue()
+            while problem.getStartState() != node:
+                node, action = nodesExplored[node]
+                path.push(action)
+            return path.list
+
+        for position, action, cost in problem.getSuccessors(node):
+            if nodesExplored[position] == 0:
+                nodesExplored[position] = (node, action)
+                nodes.push(position)
+
+    return None
 
 def nullHeuristic(state, problem=None):
     """
