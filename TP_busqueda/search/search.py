@@ -164,8 +164,8 @@ def uniformCostSearch(problem):
 
     
     while not nodes.isEmpty():
-        node = nodes.pop()
-
+        node, priority = nodes.pop()
+ 
         if problem.isGoalState(node):
             path = util.Queue()
             while problem.getStartState() != node:
@@ -176,7 +176,7 @@ def uniformCostSearch(problem):
         for position, action, cost in problem.getSuccessors(node):
             if nodesExplored[position] == 0:
                 nodesExplored[position] = (node, action)
-                nodes.push(position)
+                nodes.push(position, priority + cost)
 
     return None
 
