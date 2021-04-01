@@ -100,6 +100,28 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
+    
+
+    nodes = util.Stack()
+    nodes.push(problem.getStartState())
+
+    nodesExplored = util.Counter({problem.getStartState(): 0})
+
+    while not nodes.isEmpty():
+        node = nodes.pop()
+
+        if problem.isGoalState(node):
+            # TODO Retrun full travel path, not only final state
+            return node
+        
+        for position, direction, cost in problem.getSuccessors(node):
+            if nodesExplored[position] == 0:
+                nodes.push(position)
+                nodesExplored[position] += 1
+
+    return None
+
+
 
 def breadthFirstSearch(problem):
     """
