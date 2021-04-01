@@ -105,19 +105,27 @@ def depthFirstSearch(problem):
     nodes = util.Stack()
     nodes.push(problem.getStartState())
 
-    nodesExplored = util.Counter({problem.getStartState(): 0})
+    nodesExplored = util.Counter({problem.getStartState(): 1})
+
+    parent = {}
 
     while not nodes.isEmpty():
         node = nodes.pop()
 
         if problem.isGoalState(node):
-            # TODO Retrun full travel path, not only final state
-            return node
-        
-        for position, direction, cost in problem.getSuccessors(node):
+            path = util.Queue()
+            while problem.getStartState() != node:
+                node, action = parent[node]
+                path.push(action)
+                print (path.list)
+
+            return path.list
+
+        for position, action, cost in problem.getSuccessors(node):
             if nodesExplored[position] == 0:
                 nodes.push(position)
-                nodesExplored[position] += 1
+                nodesExplored[position] = 1
+                parent[position] = (node, action)
 
     return None
 
@@ -127,6 +135,7 @@ def breadthFirstSearch(problem):
     """
     Search the shallowest nodes in the search tree first.
     """
+
 
 def uniformCostSearch(problem):
     "Search the node of least total cost first."
