@@ -1,9 +1,1 @@
-TP_busqueda/search/ghostAgents.pyc
-TP_busqueda/search/graphicsDisplay.pyc
-TP_busqueda/search/graphicsUtils.pyc
-TP_busqueda/search/keyboardAgents.pyc
-TP_busqueda/search/layout.pyc
-TP_busqueda/search/pacman.pyc
-TP_busqueda/search/pacmanAgents.pyc
-TP_busqueda/search/search.pyc
-TP_busqueda/search/util.pyc
+*.pyc
