@@ -124,10 +124,6 @@ def depthFirstSearch(problem):
 
     return None
 
-
-
-
-
 def breadthFirstSearch(problem):
     """
     Search the shallowest nodes in the search tree first.
@@ -158,7 +154,7 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     "Search the node of least total cost first."
     nodes = util.PriorityQueue()
-    nodes.push(problem.getStartState(), 69)
+    nodes.push(problem.getStartState(), 0)
 
     nodesExplored = util.Counter({problem.getStartState(): 1})
 
@@ -189,6 +185,30 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     "Search the node that has the lowest combined cost and heuristic first."
+    nodes = util.PriorityQueue()
+    # (State, f real cost), estimated f cost + heuristic
+    startState = problem.getStartState()
+    nodes.push((startState, 0), 0 + heuristic(startState, problem))
+
+    nodesExplored = util.Counter({problem.getStartState(): 1})
+
+    
+    while not nodes.isEmpty():
+        (node, realCost), priority = nodes.pop()
+ 
+        if problem.isGoalState(node):
+            path = util.Queue()
+            while problem.getStartState() != node:
+                node, action = nodesExplored[node]
+                path.push(action)
+            return path.list
+
+        for position, action, cost in problem.getSuccessors(node):
+            if nodesExplored[position] == 0:
+                nodesExplored[position] = (node, action)
+                nodes.push((position, realCost + cost), realCost + cost + heuristic(position, problem))
+
+    return None
 
 # Abbreviations
 bfs = breadthFirstSearch
