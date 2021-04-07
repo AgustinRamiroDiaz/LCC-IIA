@@ -204,6 +204,12 @@ def aStarSearch(problem, heuristic=nullHeuristic):
             return path.list
 
         for position, action, cost in problem.getSuccessors(node):
+            if heuristic(node, problem) > cost + heuristic(position, problem):
+                print(node)
+                print(position)
+                print(heuristic(node, problem))
+                print(heuristic(position, problem))
+            assert(heuristic(node, problem) <= cost + heuristic(position, problem))
             if nodesExplored[position] == 0:
                 nodesExplored[position] = (node, action)
                 nodes.push((position, realCost + cost), realCost + cost + heuristic(position, problem))
