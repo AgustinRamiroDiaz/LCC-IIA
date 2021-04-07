@@ -325,7 +325,6 @@ class CornersProblem(search.SearchProblem):
                     cornersReached = tuple(cornersReached)
                     
                 nextState = (nextPosition, cornersReached)
-                # TODO Revisar si el 1 esta bien        *
                 successors.append( ( nextState, action, 1) )
 
         self._expanded += 1
@@ -362,7 +361,38 @@ def cornersHeuristic(state, problem):
     walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
-    return 0 # Default to trivial solution
+    position, cornersReached = state
+    height, width  = problem.walls.height-2, problem.walls.width-2
+    shortest = min(height, width)
+    longest = max(height, width)
+
+    conersCount = sum(cornersReached)
+
+    # if conersCount == 1:
+    #     return 2 * shortest + longest
+    # elif conersCount == 2:
+    #     return shortest + longest
+    # elif conersCount == 3:
+    #     return shortest
+        
+    #     total = 0
+    # for corner, isCornerReached in zip(corners, cornersReached):
+    #     if not isCornerReached:
+    #         total = total + ( (position[0] - corner[0]) ** 2 + (position[1] - corner[1]) ** 2 ) ** 0.5
+
+    total = 0
+    for corner, isCornerReached in zip(corners, cornersReached):
+        if not isCornerReached:
+            total = total + util.manhattanDistance(position, corner)
+
+    #h(N) <= costo(N,S) + h(S)
+    #h(N) <= 1 + h(S)
+    #h(N) - 1 <= h(S)
+    # . 0 0 0 .
+    # . 0 0 0 P
+
+    return total / 2
+    
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
