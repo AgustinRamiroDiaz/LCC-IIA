@@ -100,79 +100,67 @@ def depthFirstSearch(problem):
     print "Is the start a goal?", problem.isGoalState(problem.getStartState())
     print "Start's successors:", problem.getSuccessors(problem.getStartState())
     """
+    return _FS(problem, 'Depth')
 
-    nodes = util.Stack()
-    nodes.push(problem.getStartState())
 
-    nodesExplored = util.Counter({problem.getStartState(): 1})
+def _FS(problem, methodology):
+    
+    if methodology == 'Depth':
+        statesToVisit = util.Stack()
+    elif methodology == 'Breadth':
+        statesToVisit = util.Queue()
+    else:
+        raise ValueError("Search methodology not Depth nor Breadth")
+    
+    statesToVisit.push(problem.getStartState())
+
+    statesExplored = util.Counter({problem.getStartState(): 1})
 
     
-    while not nodes.isEmpty():
-        node = nodes.pop()
+    while not statesToVisit.isEmpty():
+        actualState = statesToVisit.pop()
 
-        if problem.isGoalState(node):
-            path = util.Queue()
-            while problem.getStartState() != node:
-                node, action = nodesExplored[node]
-                path.push(action)
-            return path.list
+        if problem.isGoalState(actualState):
+            return createPathFromStates(problem, actualState, statesExplored)
 
-        for position, action, cost in problem.getSuccessors(node):
-            if nodesExplored[position] == 0:
-                nodesExplored[position] = (node, action)
-                nodes.push(position)
+        for position, action, cost in problem.getSuccessors(actualState):
+            if statesExplored[position] == 0:
+                statesExplored[position] = (actualState, action)
+                statesToVisit.push(position)
 
     return None
+
+def createPathFromStates(problem, actualState, statesExplored):
+    path = util.Queue()
+    while problem.getStartState() != actualState:
+        actualState, action = statesExplored[actualState]
+        path.push(action)
+    return path.list
 
 def breadthFirstSearch(problem):
     """
     Search the shallowest nodes in the search tree first.
     """
-    nodes = util.Queue()
-    nodes.push(problem.getStartState())
-
-    nodesExplored = util.Counter({problem.getStartState(): 1})
-
-    
-    while not nodes.isEmpty():
-        node = nodes.pop()
-
-        if problem.isGoalState(node):
-            path = util.Queue()
-            while problem.getStartState() != node:
-                node, action = nodesExplored[node]
-                path.push(action)
-            return path.list
-
-        for position, action, cost in problem.getSuccessors(node):
-            if nodesExplored[position] == 0:
-                nodesExplored[position] = (node, action)
-                nodes.push(position)
-
-    return None
+    return _FS(problem, 'Breadth')
 
 def uniformCostSearch(problem):
     "Search the node of least total cost first."
-    nodes = util.PriorityQueue()
-    nodes.push(problem.getStartState(), 0)
+    statesToVisit = util.PriorityQueue()
+    statesToVisit.push(problem.getStartState(), 0)
 
-    nodesExplored = util.Counter({problem.getStartState(): 1})
+    statesExplored = util.Counter({problem.getStartState(): 1})
 
     
-    while not nodes.isEmpty():
-        node, priority = nodes.pop()
+    while not statesToVisit.isEmpty():
+        actualState, priority = statesToVisit.pop()
  
-        if problem.isGoalState(node):
-            path = util.Queue()
-            while problem.getStartState() != node:
-                node, action = nodesExplored[node]
-                path.push(action)
-            return path.list
+        if problem.isGoalState(actualState):
+            return createPathFromStates(problem, actualState, statesExplored)
 
-        for position, action, cost in problem.getSuccessors(node):
-            if nodesExplored[position] == 0:
-                nodesExplored[position] = (node, action)
-                nodes.push(position, priority + cost)
+        for position, action, cost in problem.getSuccessors(actualState):
+            if statesExplored[position] == 0:
+                statesExplored[position] = (actualState, action)
+                statesToVisit.push(position, priority + cost)
 
     return None
 
@@ -185,34 +173,30 @@ def nullHeuristic(state, problem=None):
 
 def aStarSearch(problem, heuristic=nullHeuristic):
     "Search the node that has the lowest combined cost and heuristic first."
-    nodes = util.PriorityQueue()
+    statesToVisit = util.PriorityQueue()
     # (State, f real cost), estimated f cost + heuristic
     startState = problem.getStartState()
-    nodes.push((startState, 0), 0 + heuristic(startState, problem))
+    statesToVisit.push((startState, 0), 0 + heuristic(startState, problem))
 
-    nodesExplored = util.Counter({problem.getStartState(): 1})
+    statesExplored = util.Counter({problem.getStartState(): 1})
 
     
-    while not nodes.isEmpty():
-        (node, realCost), priority = nodes.pop()
+    while not statesToVisit.isEmpty():
+        (actualState, realCost), priority = statesToVisit.pop()
  
-        if problem.isGoalState(node):
-            path = util.Queue()
-            while problem.getStartState() != node:
-                node, action = nodesExplored[node]
-                path.push(action)
-            return path.list
+        if problem.isGoalState(actualState):
+            return createPathFromStates(problem, actualState, statesExplored)
 
-        for position, action, cost in problem.getSuccessors(node):
-            if heuristic(node, problem) > cost + heuristic(position, problem):
-                print(node)
-                print(position)
-                print(heuristic(node, problem))
-                print(heuristic(position, problem))
-            assert(heuristic(node, problem) <= cost + heuristic(position, problem))
-            if nodesExplored[position] == 0:
-                nodesExplored[position] = (node, action)
-                nodes.push((position, realCost + cost), realCost + cost + heuristic(position, problem))
+        for position, action, cost in problem.getSuccessors(actualState):
+            # if heuristic(actualState, problem) > cost + heuristic(position, problem):
+            #     print(node)
+            #     print(position)
+            #     print(heuristic(node, problem))
+            #     print(heuristic(position, problem))
+            assert(heuristic(actualState, problem) <= cost + heuristic(position, problem)) # Corrobora si la heuristica es consistente
+            if statesExplored[position] == 0:
+                statesExplored[position] = (actualState, action)
+                statesToVisit.push((position, realCost + cost), realCost + cost + heuristic(position, problem))
 
     return None
 
