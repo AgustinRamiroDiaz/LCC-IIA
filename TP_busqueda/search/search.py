@@ -188,11 +188,6 @@ def aStarSearch(problem, heuristic=nullHeuristic):
             return createPathFromStates(problem, actualState, statesExplored)
 
         for position, action, cost in problem.getSuccessors(actualState):
-            # if heuristic(actualState, problem) > cost + heuristic(position, problem):
-            #     print(node)
-            #     print(position)
-            #     print(heuristic(node, problem))
-            #     print(heuristic(position, problem))
             assert(heuristic(actualState, problem) <= cost + heuristic(position, problem)) # Corrobora si la heuristica es consistente
             if statesExplored[position] == 0:
                 statesExplored[position] = (actualState, action)

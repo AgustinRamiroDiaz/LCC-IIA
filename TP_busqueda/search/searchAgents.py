@@ -347,6 +347,7 @@ def deleteElementFromTupleIfExists(element, tuple):
         return tuple
 
 def cornersHeuristic(state, problem):
+    from itertools import permutations 
     """
     A heuristic for the CornersProblem that you defined.
 
@@ -359,42 +360,28 @@ def cornersHeuristic(state, problem):
     on the shortest path from the state to a goal of the problem; i.e.
     it should be admissible (as well as consistent).
     """
-    corners = problem.corners # These are the corner coordinates
-    walls = problem.walls # These are the walls of the maze, as a Grid (game.py)
 
     "*** YOUR CODE HERE ***"
-    position, cornersReached = state
-    height, width  = problem.walls.height-2, problem.walls.width-2
-    shortest = min(height, width)
-    longest = max(height, width)
+    position, cornersNotReached = state
+    # We have to calculate
+    # the minimum path distance from the current position to 
+    # all posible permutations of the remaining fruits.
+    # Path distances are estimated with the manhattan distance
 
-    conersCount = sum(cornersReached)
-
-    # if conersCount == 1:
-    #     return 2 * shortest + longest
-    # elif conersCount == 2:
-    #     return shortest + longest
-    # elif conersCount == 3:
-    #     return shortest
-        
-    #     total = 0
-    # for corner, isCornerReached in zip(corners, cornersReached):
-    #     if not isCornerReached:
-    #         total = total + ( (position[0] - corner[0]) ** 2 + (position[1] - corner[1]) ** 2 ) ** 0.5
-
-    total = 0
-    for corner, isCornerReached in zip(corners, cornersReached):
-        if not isCornerReached:
-            total = total + util.manhattanDistance(position, corner)
-
-    #h(N) <= costo(N,S) + h(S)
-    #h(N) <= 1 + h(S)
-    #h(N) - 1 <= h(S)
-    # . 0 0 0 .
-    # . 0 0 0 P
-
-    return total / 2
     
+
+    minimum = 99999999
+    for possiblePath in list(permutations(cornersNotReached)):
+        pathDistance = 0
+        actualPosition = position
+        for corner in possiblePath:
+            pathDistance = pathDistance + util.manhattanDistance(actualPosition, corner)
+            actualPosition = corner
+        
+        minimum = pathDistance if (pathDistance < minimum) else minimum
+        
+    return minimum
+
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
@@ -485,7 +472,7 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return 0
+    return cornersHeuristic(state, problem)
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
