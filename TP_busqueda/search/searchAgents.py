@@ -277,18 +277,18 @@ class CornersProblem(search.SearchProblem):
         self._expanded = 0 # Number of search nodes expanded
 
         "*** YOUR CODE HERE ***"
-        self.goal = (True, True, True, True)
+        self.goal = ()
 
     def getStartState(self):
         "Returns the start state (in your state space, not the full Pacman state space)"
         "*** YOUR CODE HERE ***"
-        return (self.startingPosition, (False, False, False, False))
+        return (self.startingPosition, self.corners)
 
     def isGoalState(self, state):
         "Returns whether this search state is a goal state of the problem"
         "*** YOUR CODE HERE ***"
-        position, cornersReached = state
-        return cornersReached == self.goal
+        position, cornersNotReached = state
+        return cornersNotReached == self.goal
 
     def getSuccessors(self, state):
         """
@@ -312,19 +312,14 @@ class CornersProblem(search.SearchProblem):
             #   hitsWall = self.walls[nextx][nexty]
 
             "*** YOUR CODE HERE ***"
-            (x,y), cornersReached = state
+            (x,y), cornersNotReached = state
             dx, dy = Actions.directionToVector(action)
             nextx, nexty = int(x + dx), int(y + dy)
             if not self.walls[nextx][nexty]:
                 nextPosition = (nextx, nexty)
-                if nextPosition in self.corners:
-                    cornerReached = self.corners.index(nextPosition)
+                cornersNotReached = deleteElementFromTupleIfExists(nextPosition, cornersNotReached)
                     
-                    cornersReached = list(cornersReached)
-                    cornersReached[cornerReached] = 1
-                    cornersReached = tuple(cornersReached)
-                    
-                nextState = (nextPosition, cornersReached)
+                nextState = (nextPosition, cornersNotReached)
                 successors.append( ( nextState, action, 1) )
 
         self._expanded += 1
@@ -343,6 +338,13 @@ class CornersProblem(search.SearchProblem):
             if self.walls[x][y]: return 999999
         return len(actions)
 
+
+def deleteElementFromTupleIfExists(element, tuple):
+    if element in tuple:
+        indexToDelete = tuple.index(element)
+        return tuple[:indexToDelete] + tuple[indexToDelete + 1:]
+    else:
+        return tuple
 
 def cornersHeuristic(state, problem):
     """
