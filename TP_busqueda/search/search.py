@@ -146,7 +146,7 @@ def breadthFirstSearch(problem):
 def uniformCostSearch(problem):
     "Search the node of least total cost first."
     statesToVisit = util.PriorityQueue()
-    statesToVisit.push(problem.getStartState(), 0)
+    statesToVisit.push((problem.getStartState(), 0), 0)
 
     statesExplored = util.Counter({problem.getStartState(): 1})
 
@@ -160,7 +160,7 @@ def uniformCostSearch(problem):
         for position, action, cost in problem.getSuccessors(actualState):
             if statesExplored[position] == 0:
                 statesExplored[position] = (actualState, action)
-                statesToVisit.push(position, priority + cost)
+                statesToVisit.push((position, priority + cost), priority + cost)
 
     return None
 
@@ -182,7 +182,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
     
     while not statesToVisit.isEmpty():
-        (actualState, realCost), priority = statesToVisit.pop()
+        actualState, realCost = statesToVisit.pop()
  
         if problem.isGoalState(actualState):
             return createPathFromStates(problem, actualState, statesExplored)
