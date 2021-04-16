@@ -370,18 +370,65 @@ def cornersHeuristic(state, problem):
 
     
 
-    minimum = 99999999
-    for possiblePath in list(permutations(cornersNotReached)):
-        pathDistance = 0
-        actualPosition = position
-        for corner in possiblePath:
-            pathDistance = pathDistance + util.manhattanDistance(actualPosition, corner)
-            actualPosition = corner
+    # minimum = 99999999
+    # for possiblePath in set(permutations(cornersNotReached)):
+    #     pathDistance = pathCalculator.calculatePathDistance((position,) + possiblePath)
         
-        minimum = pathDistance if (pathDistance < minimum) else minimum
-        
+
+    #     minimum = pathDistance if (pathDistance < minimum) else minimum
+
+    
+    minimum = tsp.calculateMinimumDistance(position, set(cornersNotReached.asList()))
+
     return minimum
 
+class PathCalculator:
+    def __init__(self):
+        self.pathWithDistances = {}
+
+    def calculatePathDistance(self, path):
+        if path in self.pathWithDistances:
+            return self.pathWithDistances[path]
+        
+        elif len(path) >= 2:
+            pathDistance = util.manhattanDistance(path[0], path[1]) + self.calculatePathDistance(path[1:])
+            self.pathWithDistances[path] = pathDistance
+            return pathDistance
+
+        else:
+            return 0
+
+pathCalculator = PathCalculator()
+
+class TSP:
+    def __init__(self):
+        self.distances = {}
+    
+    def calculateMinimumDistance(self, fromPosition, toSet):
+        frozenToSet = frozenset(toSet)
+        if (fromPosition, frozenToSet) in self.distances:
+            return self.distances[(fromPosition, frozenToSet)]
+
+        if not toSet:
+            return 0
+        
+        minimumDistance = 9999999
+        for firstVisited in toSet:
+            newToSet = toSet.copy()
+            newToSet.remove(firstVisited)
+
+            distanceFirstStep = util.manhattanDistance(fromPosition, firstVisited)
+            distanceLeft = self.calculateMinimumDistance(firstVisited, newToSet)
+
+            totalDistance = distanceFirstStep + distanceLeft
+
+            if totalDistance < minimumDistance:
+                minimumDistance = totalDistance
+
+        self.distances[(fromPosition, frozenToSet)] = minimumDistance
+        return minimumDistance
+
+tsp = TSP()
 
 class AStarCornersAgent(SearchAgent):
     "A SearchAgent for FoodSearchProblem using A* and your foodHeuristic"
