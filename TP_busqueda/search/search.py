@@ -114,7 +114,7 @@ def _FS(problem, methodology):
     
     statesToVisit.push(problem.getStartState())
 
-    statesExplored = util.Counter({problem.getStartState(): 1})
+    statesExplored = {problem.getStartState(): (problem.getStartState(), None)}
 
     
     while not statesToVisit.isEmpty():
@@ -124,7 +124,7 @@ def _FS(problem, methodology):
             return createPathFromStates(problem, actualState, statesExplored)
 
         for position, action, cost in problem.getSuccessors(actualState):
-            if statesExplored[position] == 0:
+            if position not in statesExplored:
                 statesExplored[position] = (actualState, action)
                 statesToVisit.push(position)
 
@@ -148,7 +148,7 @@ def uniformCostSearch(problem):
     statesToVisit = util.PriorityQueue()
     statesToVisit.push((problem.getStartState(), 0), 0)
 
-    statesExplored = util.Counter({problem.getStartState(): 1})
+    statesExplored = {problem.getStartState(): (problem.getStartState(), None)}
 
     
     while not statesToVisit.isEmpty():
@@ -158,7 +158,7 @@ def uniformCostSearch(problem):
             return createPathFromStates(problem, actualState, statesExplored)
 
         for position, action, cost in problem.getSuccessors(actualState):
-            if statesExplored[position] == 0:
+            if position not in statesExplored:
                 statesExplored[position] = (actualState, action)
                 statesToVisit.push((position, priority + cost), priority + cost)
 
@@ -178,7 +178,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
     startState = problem.getStartState()
     statesToVisit.push((startState, 0), 0 + heuristic(startState, problem))
 
-    statesExplored = util.Counter({problem.getStartState(): 1})
+    statesExplored = {problem.getStartState(): (problem.getStartState(), None)}
 
     
     while not statesToVisit.isEmpty():
@@ -189,7 +189,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
 
         for position, action, cost in problem.getSuccessors(actualState):
             assert(heuristic(actualState, problem) <= cost + heuristic(position, problem)) # Heuristic has to be consistent
-            if statesExplored[position] == 0:
+            if position not in statesExplored:
                 statesExplored[position] = (actualState, action)
                 statesToVisit.push((position, realCost + cost), realCost + cost + heuristic(position, problem))
 
