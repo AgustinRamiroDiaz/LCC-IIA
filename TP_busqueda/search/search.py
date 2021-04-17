@@ -174,7 +174,7 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     "Search the node that has the lowest combined cost and heuristic first."
     statesToVisit = util.PriorityQueue()
-    # (State, f real cost), estimated f cost + heuristic
+    # (State, f real cost), estimated cost (f + heuristic)
     startState = problem.getStartState()
     statesToVisit.push((startState, 0), 0 + heuristic(startState, problem))
 
@@ -188,7 +188,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
             return createPathFromStates(problem, actualState, statesExplored)
 
         for position, action, cost in problem.getSuccessors(actualState):
-            assert(heuristic(actualState, problem) <= cost + heuristic(position, problem)) # Corrobora si la heuristica es consistente
+            assert(heuristic(actualState, problem) <= cost + heuristic(position, problem)) # Heuristic has to be consistent
             if statesExplored[position] == 0:
                 statesExplored[position] = (actualState, action)
                 statesToVisit.push((position, realCost + cost), realCost + cost + heuristic(position, problem))

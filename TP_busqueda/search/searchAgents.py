@@ -277,6 +277,7 @@ class CornersProblem(search.SearchProblem):
         self._expanded = 0 # Number of search nodes expanded
 
         "*** YOUR CODE HERE ***"
+        self._visited, self._visitedlist, self._expanded = {}, [], 0
         self.goal = ()
 
     def getStartState(self):
@@ -288,7 +289,14 @@ class CornersProblem(search.SearchProblem):
         "Returns whether this search state is a goal state of the problem"
         "*** YOUR CODE HERE ***"
         position, cornersNotReached = state
-        return cornersNotReached == self.goal
+        isGoal = cornersNotReached == self.goal 
+        if isGoal:
+            self._visitedlist.append(position)
+            import __main__
+            if '_display' in dir(__main__):
+                if 'drawExpandedCells' in dir(__main__._display): #@UndefinedVariable
+                    __main__._display.drawExpandedCells(self._visitedlist) #@UndefinedVariable
+        return isGoal
 
     def getSuccessors(self, state):
         """
@@ -323,6 +331,10 @@ class CornersProblem(search.SearchProblem):
                 successors.append( ( nextState, action, 1) )
 
         self._expanded += 1
+        if (x,y) not in self._visited:
+            self._visited[(x,y)] = True
+            self._visitedlist.append((x,y))
+
         return successors
 
     def getCostOfActions(self, actions):
@@ -367,52 +379,29 @@ def cornersHeuristic(state, problem):
     # the minimum path distance from the current position to 
     # all posible permutations of the remaining fruits.
     # Path distances are estimated with the manhattan distance
-
     
+    return tsp.calculateMinimumDistance(position, set(cornersNotReached))
 
-    # minimum = 99999999
-    # for possiblePath in set(permutations(cornersNotReached)):
-    #     pathDistance = pathCalculator.calculatePathDistance((position,) + possiblePath)
-        
-
-    #     minimum = pathDistance if (pathDistance < minimum) else minimum
-
-    
-    minimum = tsp.calculateMinimumDistance(position, set(cornersNotReached.asList()))
-
-    return minimum
-
-class PathCalculator:
-    def __init__(self):
-        self.pathWithDistances = {}
-
-    def calculatePathDistance(self, path):
-        if path in self.pathWithDistances:
-            return self.pathWithDistances[path]
-        
-        elif len(path) >= 2:
-            pathDistance = util.manhattanDistance(path[0], path[1]) + self.calculatePathDistance(path[1:])
-            self.pathWithDistances[path] = pathDistance
-            return pathDistance
-
-        else:
-            return 0
-
-pathCalculator = PathCalculator()
 
 class TSP:
     def __init__(self):
-        self.distances = {}
+        self.distancesAlreadyCalculated = {}
     
     def calculateMinimumDistance(self, fromPosition, toSet):
+        import sys
         frozenToSet = frozenset(toSet)
-        if (fromPosition, frozenToSet) in self.distances:
-            return self.distances[(fromPosition, frozenToSet)]
+        if (fromPosition, frozenToSet) in self.distancesAlreadyCalculated:
+            return self.distancesAlreadyCalculated[(fromPosition, frozenToSet)]
 
+        # Base case: No elements in toSet to travel
         if not toSet:
             return 0
         
-        minimumDistance = 9999999
+        # Recursive case: calculate minimum path with tsp algorithm
+        # Algorithm explained here:
+        # https://www.youtube.com/watch?v=XaXsJJh-Q5Y
+
+        minimumDistance = sys.maxint
         for firstVisited in toSet:
             newToSet = toSet.copy()
             newToSet.remove(firstVisited)
@@ -425,9 +414,11 @@ class TSP:
             if totalDistance < minimumDistance:
                 minimumDistance = totalDistance
 
-        self.distances[(fromPosition, frozenToSet)] = minimumDistance
+        self.distancesAlreadyCalculated[(fromPosition, frozenToSet)] = minimumDistance
         return minimumDistance
 
+# Unique tsp instance used by cornersHeuristic and foodHeuristic 
+# to take advantage of memorized paths
 tsp = TSP()
 
 class AStarCornersAgent(SearchAgent):
@@ -519,7 +510,8 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    return cornersHeuristic(state, problem)
+    positionsOfFruits = foodGrid.asList()
+    return tsp.calculateMinimumDistance(position, set(positionsOfFruits))
 
 class ClosestDotSearchAgent(SearchAgent):
     "Search for all food using a sequence of searches"
