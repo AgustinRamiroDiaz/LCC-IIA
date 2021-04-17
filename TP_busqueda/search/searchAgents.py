@@ -277,8 +277,8 @@ class CornersProblem(search.SearchProblem):
         self._expanded = 0 # Number of search nodes expanded
 
         "*** YOUR CODE HERE ***"
-        self._visited, self._visitedlist, self._expanded = {}, [], 0
-        self.goal = ()
+        self._visited, self._visitedlist, self._expanded = {}, [], 0    # For visuals
+        self.goal = () 
 
     def getStartState(self):
         "Returns the start state (in your state space, not the full Pacman state space)"
@@ -290,12 +290,15 @@ class CornersProblem(search.SearchProblem):
         "*** YOUR CODE HERE ***"
         position, cornersNotReached = state
         isGoal = cornersNotReached == self.goal 
+
+        # For visuals
         if isGoal:
             self._visitedlist.append(position)
             import __main__
             if '_display' in dir(__main__):
                 if 'drawExpandedCells' in dir(__main__._display): #@UndefinedVariable
                     __main__._display.drawExpandedCells(self._visitedlist) #@UndefinedVariable
+                    
         return isGoal
 
     def getSuccessors(self, state):
