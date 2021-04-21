@@ -278,7 +278,7 @@ class CornersProblem(search.SearchProblem):
 
         "*** YOUR CODE HERE ***"
         self._visited, self._visitedlist, self._expanded = {}, [], 0    # For visuals
-        self.goal = () 
+        self.goal = ()  #all fruits collected
 
     def getStartState(self):
         "Returns the start state (in your state space, not the full Pacman state space)"
@@ -355,6 +355,9 @@ class CornersProblem(search.SearchProblem):
 
 
 def deleteElementFromTupleIfExists(element, tuple):
+    """
+    Deletes element from the tuple. If the new state position is a fruit coordinate, we remove it from the remaining fruits(corners) list
+    """
     if element in tuple:
         indexToDelete = tuple.index(element)
         return tuple[:indexToDelete] + tuple[indexToDelete + 1:]
@@ -379,7 +382,7 @@ def cornersHeuristic(state, problem):
     position, cornersNotReached = state
     # We have to calculate
     # the minimum path distance from the current position to 
-    # all of the remaining fruits.
+    # collect all of the remaining fruits.
     # Path distances are estimated with the manhattan distance
     
     return tsp.calculateMinimumDistance(position, set(cornersNotReached))
@@ -387,15 +390,19 @@ def cornersHeuristic(state, problem):
 
 class TSP:
 
-    #Dictionary where we are going to store the calculated distances to improve time efficiency
     def __init__(self):
-        self.distancesAlreadyCalculated = {}
+        self.distancesAlreadyCalculated = {}    #Dictionary where we are going to store the calculated distances to improve time efficiency
     
     def calculateMinimumDistance(self, fromPosition, toSet):
+        """
+        Calculates the minimum distance of the path starting from the fromPosition and passing 
+        through all the fruits positions in toSet.
+        The distance between 2 positions is estimated with the manhattan distance.
+        """
         import sys
         frozenToSet = frozenset(toSet)
         if (fromPosition, frozenToSet) in self.distancesAlreadyCalculated:
-            return self.distancesAlreadyCalculated[(fromPosition, frozenToSet)]
+            return self.distancesAlreadyCalculated[(fromPosition, frozenToSet)] #to save time
 
         # Base case: No elements in toSet to travel
         if not toSet:
@@ -511,7 +518,7 @@ def foodHeuristic(state, problem):
     """
     position, foodGrid = state
     "*** YOUR CODE HERE ***"
-    positionsOfFruits = foodGrid.asList()
+    positionsOfFruits = foodGrid.asList()   #we need the coordinates of the fruits
     return tsp.calculateMinimumDistance(position, set(positionsOfFruits))
 
 class ClosestDotSearchAgent(SearchAgent):

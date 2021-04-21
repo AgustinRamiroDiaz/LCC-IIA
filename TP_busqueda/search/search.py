@@ -125,17 +125,20 @@ def _FS(problem, methodology):
 
         for position, action, cost in problem.getSuccessors(actualState):
             if position not in statesExplored:
-                statesExplored[position] = (actualState, action)
+                statesExplored[position] = (actualState, action)    #store the origin node and the action to get to this successor
                 statesToVisit.push(position)
 
     return None
 
 def createPathFromStates(problem, actualState, statesExplored):
+    """
+    Reconstructs the path from the actual state (goal state) to the start state
+    """
     path = util.Queue()
     while problem.getStartState() != actualState:
         actualState, action = statesExplored[actualState]
         path.push(action)
-    return path.list
+    return path.list    #so the actions are in correct order
 
 def breadthFirstSearch(problem):
     """
@@ -160,7 +163,7 @@ def uniformCostSearch(problem):
         for position, action, cost in problem.getSuccessors(actualState):
             if position not in statesExplored:
                 statesExplored[position] = (actualState, action)
-                statesToVisit.push((position, priority + cost), priority + cost)
+                statesToVisit.push((position, priority + cost), priority + cost)    #add the route cost and store it with the position so we can pop it later
 
     return None
 
@@ -174,7 +177,7 @@ def nullHeuristic(state, problem=None):
 def aStarSearch(problem, heuristic=nullHeuristic):
     "Search the node that has the lowest combined cost and heuristic first."
     statesToVisit = util.PriorityQueue()
-    # (State, f real cost), estimated cost (f + heuristic)
+    # (State, f -real cost-), estimated cost (f + heuristic)
     startState = problem.getStartState()
     statesToVisit.push((startState, 0), 0 + heuristic(startState, problem))
 
