@@ -19,9 +19,23 @@ h(N) <= c(N,S) + h(S)
 donde h es la función heurística, N es un nodo del grafo, S es un sucesor de N y c(N,S)
 es el costo de ir desde N a S.
 
-Un sucesor de S de N, siempre va a estar a distancia 1 del nodo origen N, con lo cual la heurística 
-en el sucesor debería dar uno menos. Pero, el costo de N a S es tambíen como mínimo 1, con lo cual
-tendremos una igualdad en ese caso, y sino, h(N) será estrictamente menor en otro caso.
+El coste de llegar del nodo N a un sucesor S es c(N, S) = 1 
+dado que consideramos el costo del camino como su longitud 
+(sin tener en cuenta fantasmas ni premios intermedios).
+Con lo cual la verificación de consistencia será verificar
+h(N) <= h(S) + 1        *alpha*
+
+
+Tendremos 2 casos para S:
+    -S está en dirección a favor del camino del menor costo, por lo tanto h(N) - 1 = h(S), lo cual verifica *alpha*
+    -S está en dirección opuesta al camino del menor costo, lo cual puede tener 2 resultados posibles:
+        -El camino del menor costo es volver a N y luego el camino desde N: en este caso h(N) + 1 = h(S), lo cual verifica *alpha*
+        -El camino del menor costo es distinto a volver a N: En este caso demostremos por el absurdo, suponiendo que h(N) > h(S) + 1.
+         Eso significaría que desde N el camino más corto es más largo que pasar por S y luego recorrer el camino más corto desde S.
+         Lo cual es contradictorio ya que entonces el camino más corto desde N sería pasando por S y luego el camino más corto desde S, 
+         Esta contradicción parte de suponer h(N) > h(S) + 1 y por lo tanto concluimos *alpha*
+
 Por lo tanto la heurística es consistente (monótona).
+
 Nota: dejamos un assert en la función de búsqueda A* donde se verifica efectivamente
 la monotonía en cada paso.
