@@ -362,7 +362,6 @@ def deleteElementFromTupleIfExists(element, tuple):
         return tuple
 
 def cornersHeuristic(state, problem):
-    from itertools import permutations 
     """
     A heuristic for the CornersProblem that you defined.
 
@@ -380,13 +379,15 @@ def cornersHeuristic(state, problem):
     position, cornersNotReached = state
     # We have to calculate
     # the minimum path distance from the current position to 
-    # all posible permutations of the remaining fruits.
+    # all of the remaining fruits.
     # Path distances are estimated with the manhattan distance
     
     return tsp.calculateMinimumDistance(position, set(cornersNotReached))
 
 
 class TSP:
+
+    #Dictionary where we are going to store the calculated distances to improve time efficiency
     def __init__(self):
         self.distancesAlreadyCalculated = {}
     
@@ -401,9 +402,6 @@ class TSP:
             return 0
         
         # Recursive case: calculate minimum path with tsp algorithm
-        # Algorithm explained here:
-        # https://www.youtube.com/watch?v=XaXsJJh-Q5Y
-
         minimumDistance = sys.maxint
         for firstVisited in toSet:
             newToSet = toSet.copy()

@@ -1,0 +1,27 @@
+En este trabajo se presenta como posible heurística utilizar el mínimo camino posible para agarrar cada
+una de las frutas (nos inspiramos en el conocido problema TSP, "Travelling Salesman Problem").
+El algoritmo es explicado aquí:
+https://www.youtube.com/watch?v=XaXsJJh-Q5Y
+
+Esta heurística es usada tanto en el cornersProblem como en el foodProblem (solo se manipulan los states de
+manera de poder tener la posición del pacman y las coordenadas de las frutas) ya que al calcular los caminos
+mínimos para recorrerlas, resulta indiferente la ubicación en la que estén las frutas.
+
+La función de nuestra heurística, al devolver el mínimo camino posible desde la pacman hacia cada una
+de las frutas, siempre retorna un número que no subestima el camino más corto desde el estado a la meta
+del problema, ya que en la realidad el pacman tiene varias limitaciones como ser paredes y otros obstáculos que
+hacen que el camino para llegar a la meta sea más largo. Además, en el caso de que no tuviera dichos
+obstáculos, nuestra función devuelve el camino más corto así que en el peor caso, sería igual.
+Por lo tanto la heurística es admisible.
+
+Además, si recordamos la definición de heurística consistente, tenemos que ver que:
+h(N) <= c(N,S) + h(S)
+donde h es la función heurística, N es un nodo del grafo, S es un sucesor de N y c(N,S)
+es el costo de ir desde N a S.
+
+Un sucesor de S de N, siempre va a estar a distancia 1 del nodo origen N, con lo cual la heurística 
+en el sucesor debería dar uno menos. Pero, el costo de N a S es tambíen como mínimo 1, con lo cual
+tendremos una igualdad en ese caso, y sino, h(N) será estrictamente menor en otro caso.
+Por lo tanto la heurística es consistente (monótona).
+Nota: dejamos un assert en la función de búsqueda A* donde se verifica efectivamente
+la monotonía en cada paso.
