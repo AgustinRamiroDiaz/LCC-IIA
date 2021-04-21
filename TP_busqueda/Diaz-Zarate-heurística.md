@@ -30,13 +30,11 @@ $$h(N) <= c(N,S) + h(S)$$ donde h es la función heurística, N es un nodo del g
 
 El costo de llegar del nodo N a un sucesor S es c(N, S) = 1 dado que consideramos el costo del camino como su longitud (sin tener en cuenta fantasmas ni premios intermedios). Con lo cual demostrar consistencia será equivalente a verificar
 $$h(N) <= h(S) + 1 \tag{$\alpha$}$$
-
-
 Demostremos por el absurdo, suponiendo que existen N y S (S sucesor de N) tales que 
 $$h(N) > h(S) + 1$$
-Eso significaría que desde N el camino más corto que recoge todas las frutas es más largo que pasar por S y luego recorrer el camino más corto desde S.
-Lo cual es contradictorio ya que entonces el camino más corto desde N sería pasando por S y luego el camino más corto desde S. Esta contradicción parte de suponer h(N) > h(S) + 1 y por lo tanto concluimos $\alpha$
 
+Eso significaría que el camino más corto desde N que recoge todas las frutas (h(N)) es más largo que pasar por S (con costo 1) y luego recorrer el camino más corto desde S (h(S)), pero ese es un camino que debería ser contabilizado para calcular h(N).
+Lo cual es contradictorio ya que entonces el camino más corto desde N sería pasando por S y luego el camino más corto desde S. Esta contradicción parte de suponer h(N) > h(S) + 1 y por lo tanto concluimos $\alpha$
 
 $\therefore$ La heurística es consistente (monótona).
 
