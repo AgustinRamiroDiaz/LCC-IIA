@@ -246,5 +246,37 @@ a_ h no es admisible pues h(E) = 14 > G2(E) = 12
 (hacer cuadro completo con todos los casos e ir eligiendo el mínimo)
 
 b_
+
+7.
+Posición	Orientación	f	h	total
+
+(1, 1) N 0 10 10
+	(1, 1) E 1 10 11
+	(2, 1) N 2 8  10
+		(2, 1) E 3 8 11
+		(3, 1) N 4 6 10
+			(3, 1) E 5 6 11
+				(3, 1) S 6 6 12
+				(3, 2) E 7 4 11
+					(3, 2) S 8 4 12
+					(3, 3) E 9 2 11
+						(3, 4) E 11 0 11 --> meta!
+			(4, 1) N 6 8 14
+rep estados:
+((x_robot,y_robot),orientación_robot)
+
+rotar:
+	(x, y), O -> (x, y), f(O)
+
+	f(N) =...
+
+
+avanzar:
+	(x, y), O -> (x + fx(O), y + fy(O)), O
+
+	fx(N) = 1
+	fy(N) = 0
+
+	/ el estado final no pertenezca al conjunto de las celdas prohibidas
 """
 
