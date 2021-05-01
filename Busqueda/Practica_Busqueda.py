@@ -264,14 +264,24 @@ rep estados:
 rotar:
 	(x, y), O -> (x, y), f(O)
 
-	f(N) =...
+	f(N) = E
+	f(E) = S
+	f(S) = O
+	f(O) = N
 
 
 avanzar:
 	(x, y), O -> (x + fx(O), y + fy(O)), O
 
 	fx(N) = 1
+    fx(S) = -1
+    fx(E) = 0
+    fx(O) = 0
+
 	fy(N) = 0
+	fy(S) = 0
+	fy(E) = 1
+	fy(O) = -1
 
 	/ el estado final no pertenezca al conjunto de las celdas prohibidas
     
