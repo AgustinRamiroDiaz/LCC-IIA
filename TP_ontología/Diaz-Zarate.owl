@@ -50,7 +50,7 @@
         <Class IRI="#Plataforma"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Programador"/>
@@ -92,6 +92,9 @@
         <ObjectProperty IRI="#EsElEstiloDeUn"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#Forma"/>
     </Declaration>
     <Declaration>
@@ -99,9 +102,6 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#PerteneceA"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#SonGanadosPor"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -209,7 +209,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Banda_Sonora"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Banda_Sonora"/>
@@ -229,7 +229,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Estudio"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Estudio"/>
@@ -241,7 +241,7 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Género"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Género"/>
@@ -249,14 +249,14 @@
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Persona"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Persona"/>
         <Class IRI="#Videojuego"/>
     </DisjointClasses>
     <DisjointClasses>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
         <Class IRI="#Videojuego"/>
     </DisjointClasses>
     <ClassAssertion>
@@ -296,11 +296,11 @@
         <ObjectProperty IRI="#PerteneceA"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#EsGanadoPor"/>
         <ObjectProperty IRI="#Gana"/>
-        <ObjectProperty IRI="#SonGanadosPor"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
-        <ObjectProperty IRI="#SonGanadosPor"/>
+        <ObjectProperty IRI="#EsGanadoPor"/>
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
@@ -347,7 +347,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#Gana"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#PerteneceA"/>
@@ -363,7 +363,7 @@
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#AñoOtorgamiento"/>
-        <Class IRI="#Premios"/>
+        <Class IRI="#Premio"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Dimensión"/>
