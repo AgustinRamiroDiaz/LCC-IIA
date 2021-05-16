@@ -1122,6 +1122,16 @@
         <Literal>Online</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <Literal>Console</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#Pax_East_Alumni"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
@@ -1180,6 +1190,11 @@
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
         <Literal>Online</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <Literal>Mobile</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
