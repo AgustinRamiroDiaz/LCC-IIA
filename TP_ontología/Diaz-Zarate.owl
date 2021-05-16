@@ -6,7 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.semanticweb.org/aldana/ontologies/2021/4/Diaz-Zarate-Ontologia">
-    <Prefix name="" IRI="http://www.semanticweb.org/aldana/ontologies/2021/4/untitled-ontology-8#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/aldana/ontologies/2021/4/Diaz-Zarate-Ontologia"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -136,6 +136,9 @@
     <Declaration>
         <DataProperty IRI="#Puntuación"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Overcooked"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Cooperativo"/>
         <Class IRI="#Multijugador"/>
@@ -193,9 +196,73 @@
         <Class IRI="#Multijugador"/>
     </SubClassOf>
     <DisjointClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <Class IRI="#Estudio"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <Class IRI="#Género"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <Class IRI="#Persona"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <Class IRI="#Premios"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <Class IRI="#Videojuego"/>
+    </DisjointClasses>
+    <DisjointClasses>
         <Class IRI="#Corporación"/>
         <Class IRI="#Independiente"/>
     </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Estudio"/>
+        <Class IRI="#Género"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Estudio"/>
+        <Class IRI="#Persona"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Estudio"/>
+        <Class IRI="#Premios"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Estudio"/>
+        <Class IRI="#Videojuego"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Género"/>
+        <Class IRI="#Persona"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Género"/>
+        <Class IRI="#Premios"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Género"/>
+        <Class IRI="#Videojuego"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Persona"/>
+        <Class IRI="#Premios"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Persona"/>
+        <Class IRI="#Videojuego"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Premios"/>
+        <Class IRI="#Videojuego"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Cooperativo"/>
+        <NamedIndividual IRI="#Overcooked"/>
+    </ClassAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
