@@ -137,7 +137,7 @@
         <DataProperty IRI="#Puntuación"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#Audience_Award"/>
+        <NamedIndividual IRI="#Ari_Gibson"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#British_Academy_Games_Awards"/>
@@ -158,6 +158,9 @@
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Enter_the_Gungeon_-_Soundtrack"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </Declaration>
     <Declaration>
@@ -168,6 +171,15 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Hollow_Knight"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Jack_Vine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Leap_Day"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Lena_Raine"/>
@@ -203,10 +215,25 @@
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Rust_Bucket"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#The_Game_Awards"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Thomas_Mahler"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#William_Pellen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#13th_British_Academy_Games_Awards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Cooperativo"/>
@@ -329,8 +356,8 @@
         <Class IRI="#Videojuego"/>
     </DisjointClasses>
     <ClassAssertion>
-        <Class IRI="#Premio"/>
-        <NamedIndividual IRI="#Audience_Award"/>
+        <Class IRI="#Diseñador"/>
+        <NamedIndividual IRI="#Ari_Gibson"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Premio"/>
@@ -361,6 +388,10 @@
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Banda_Sonora"/>
+        <NamedIndividual IRI="#Enter_the_Gungeon_-_Soundtrack"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Independiente"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </ClassAssertion>
@@ -375,6 +406,18 @@
     <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Hollow_Knight"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Banda_Sonora"/>
+        <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Programador"/>
+        <NamedIndividual IRI="#Jack_Vine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Leap_Day"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Músico"/>
@@ -429,6 +472,14 @@
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Rust_Bucket"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Independiente"/>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Premio"/>
         <NamedIndividual IRI="#The_Game_Awards"/>
     </ClassAssertion>
@@ -436,10 +487,27 @@
         <Class IRI="#Diseñador"/>
         <NamedIndividual IRI="#Thomas_Mahler"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diseñador"/>
+        <NamedIndividual IRI="#William_Pellen"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#13th_British_Academy_Games_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Banda_Sonora"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
+    </ClassAssertion>
     <DifferentIndividuals>
         <NamedIndividual IRI="#Celeste"/>
         <NamedIndividual IRI="#Overcooked"/>
     </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Ari_Gibson"/>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
         <NamedIndividual IRI="#British_Academy_Games_Awards"/>
@@ -473,6 +541,21 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#Heather_Stancliffe"/>
+        <NamedIndividual IRI="#Nitrome"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Jack_Vine"/>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+        <NamedIndividual IRI="#Leap_Day"/>
         <NamedIndividual IRI="#Nitrome"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -525,11 +608,16 @@
         <NamedIndividual IRI="#Thomas_Mahler"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
     </ObjectPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#AñoOtorgamiento"/>
-        <NamedIndividual IRI="#Audience_Award"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2018</Literal>
-    </DataPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#William_Pellen"/>
+        <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#13th_British_Academy_Games_Awards"/>
+        <NamedIndividual IRI="#Overcooked"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#British_Academy_Games_Awards"/>
@@ -591,9 +679,64 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Achievements"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Dimensión"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal>2d</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2017-02-24T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal>Console</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Puntuación"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Achievements"/>
+        <NamedIndividual IRI="#Leap_Day"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Leap_Day"/>
+        <Literal>Mobile</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Leap_Day"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Puntuación"/>
+        <NamedIndividual IRI="#Leap_Day"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#NAVGTR_awards"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Achievements"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#FechaDeLanzamiento"/>
@@ -616,6 +759,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.8</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Achievements"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Overcooked"/>
         <Literal>Local</Literal>
@@ -631,9 +779,19 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Achievements"/>
+        <NamedIndividual IRI="#Rust_Bucket"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#The_Game_Awards"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#13th_British_Academy_Games_Awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2016</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
