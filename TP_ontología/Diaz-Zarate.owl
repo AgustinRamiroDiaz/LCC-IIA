@@ -122,9 +122,6 @@
         <DataProperty IRI="#MetodoDeJuego"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#NúmeroDeIntegrantes"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#Plataforma"/>
     </Declaration>
     <Declaration>
@@ -1219,6 +1216,24 @@
         <ObjectProperty IRI="#TrabajaEn"/>
         <Class IRI="#Estudio"/>
     </ObjectPropertyRange>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Achievements"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Dimensión"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Edad"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+    </FunctionalDataProperty>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#Puntuación"/>
+    </FunctionalDataProperty>
     <DataPropertyDomain>
         <DataProperty IRI="#Achievements"/>
         <Class IRI="#Videojuego"/>
@@ -1242,10 +1257,6 @@
     <DataPropertyDomain>
         <DataProperty IRI="#MetodoDeJuego"/>
         <Class IRI="#Multijugador"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
-        <DataProperty IRI="#NúmeroDeIntegrantes"/>
-        <Class IRI="#Banda_Sonora"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#Plataforma"/>
@@ -1285,10 +1296,6 @@
             <Literal>Local</Literal>
             <Literal>Online</Literal>
         </DataOneOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#NúmeroDeIntegrantes"/>
-        <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#Plataforma"/>
