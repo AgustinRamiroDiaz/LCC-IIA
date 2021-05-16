@@ -143,6 +143,9 @@
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Overcooked"/>
     </Declaration>
     <SubClassOf>
@@ -278,6 +281,10 @@
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Independiente"/>
+        <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Cooperativo"/>
         <NamedIndividual IRI="#Overcooked"/>
     </ClassAssertion>
@@ -293,6 +300,26 @@
         <NamedIndividual IRI="#Celeste"/>
         <NamedIndividual IRI="#Overcooked"/>
     </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <Literal>Local</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <Literal>Local</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <Literal>Online</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -334,6 +361,9 @@
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Gana"/>
     </InverseFunctionalObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
@@ -439,6 +469,13 @@
     <DataPropertyRange>
         <DataProperty IRI="#FechaDeLanzamiento"/>
         <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <DataOneOf>
+            <Literal>Local</Literal>
+            <Literal>Online</Literal>
+        </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#Nombre"/>
