@@ -1140,6 +1140,9 @@
         <ObjectProperty IRI="#TocaPara"/>
     </InverseObjectProperties>
     <FunctionalObjectProperty>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
         <ObjectProperty IRI="#EsGanadoPor"/>
     </FunctionalObjectProperty>
     <FunctionalObjectProperty>
@@ -1151,15 +1154,6 @@
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#Gana"/>
     </InverseFunctionalObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#Desarrolla"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#Forma"/>
-    </AsymmetricObjectProperty>
-    <AsymmetricObjectProperty>
-        <ObjectProperty IRI="#PerteneceA"/>
-    </AsymmetricObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#Desarrolla"/>
         <Class IRI="#Estudio"/>
