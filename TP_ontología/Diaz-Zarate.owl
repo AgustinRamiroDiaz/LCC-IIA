@@ -137,6 +137,9 @@
         <DataProperty IRI="#Puntuación"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Audience_Award"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Celeste"/>
     </Declaration>
     <Declaration>
@@ -144,6 +147,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Lena_Raine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Maddy_Thorson"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Overcooked"/>
@@ -269,6 +278,10 @@
         <Class IRI="#Videojuego"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Audience_Award"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Celeste"/>
     </ClassAssertion>
@@ -283,6 +296,14 @@
     <ClassAssertion>
         <Class IRI="#Independiente"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Músico"/>
+        <NamedIndividual IRI="#Lena_Raine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diseñador"/>
+        <NamedIndividual IRI="#Maddy_Thorson"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cooperativo"/>
@@ -305,6 +326,46 @@
         <NamedIndividual IRI="#Celeste"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Lena_Raine"/>
+        <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Maddy_Thorson"/>
+        <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Audience_Award"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Dimensión"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <Literal>2d</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2018-01-25T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <Literal>Console</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Puntuación"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">9.1</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
@@ -463,6 +524,14 @@
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#Dimensión"/>
+        <DataOneOf>
+            <Literal>2.5d</Literal>
+            <Literal>2d</Literal>
+            <Literal>3d</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#Edad"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
@@ -484,6 +553,14 @@
     <DataPropertyRange>
         <DataProperty IRI="#NúmeroDeIntegrantes"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Plataforma"/>
+        <DataOneOf>
+            <Literal>Console</Literal>
+            <Literal>Mobile</Literal>
+            <Literal>PC</Literal>
+        </DataOneOf>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#Puntuación"/>
