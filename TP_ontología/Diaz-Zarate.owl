@@ -47,25 +47,16 @@
         <Class IRI="#Persona"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Plataforma"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Premio"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Programador"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#RPG"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Rogue"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Simulación"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Souls-like"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Un_solo_jugador"/>
@@ -125,9 +116,6 @@
         <DataProperty IRI="#MetodoDeJuego"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#Nombre"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="#NúmeroDeIntegrantes"/>
     </Declaration>
     <Declaration>
@@ -143,10 +131,22 @@
         <NamedIndividual IRI="#Audience_Award"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Auto"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Avión"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#British_Academy_Games_Awards"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Celeste"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Cocina"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#David_Clark"/>
@@ -168,6 +168,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Granja"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Heather_Stancliffe"/>
@@ -200,6 +203,9 @@
         <NamedIndividual IRI="#Matthew_Annal"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Mobile_Taquillero"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
     </Declaration>
     <Declaration>
@@ -221,10 +227,31 @@
         <NamedIndividual IRI="#Pax_East_Alumni"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Plataforma"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Puzzle"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RPG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rogue_Like"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rogue_Lite"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Runner"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Rust_Bucket"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Souls_Like"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Team_Cherry"/>
@@ -269,16 +296,8 @@
         <Class IRI="#Persona"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Plataforma"/>
-        <Class IRI="#Género"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Programador"/>
         <Class IRI="#Persona"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#RPG"/>
-        <Class IRI="#Género"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Rogue"/>
@@ -286,10 +305,6 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Simulación"/>
-        <Class IRI="#Género"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Souls-like"/>
         <Class IRI="#Género"/>
     </SubClassOf>
     <SubClassOf>
@@ -373,12 +388,28 @@
         <NamedIndividual IRI="#Audience_Award"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Simulación"/>
+        <NamedIndividual IRI="#Auto"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Simulación"/>
+        <NamedIndividual IRI="#Avión"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Premio"/>
         <NamedIndividual IRI="#British_Academy_Games_Awards"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Celeste"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Banda_Sonora"/>
+        <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Simulación"/>
+        <NamedIndividual IRI="#Cocina"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Programador"/>
@@ -411,6 +442,10 @@
     <ClassAssertion>
         <Class IRI="#Premio"/>
         <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Simulación"/>
+        <NamedIndividual IRI="#Granja"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Programador"/>
@@ -453,6 +488,10 @@
         <NamedIndividual IRI="#Matthew_Annal"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Mobile_Taquillero"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Corporación"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
     </ClassAssertion>
@@ -489,12 +528,40 @@
         <NamedIndividual IRI="#Pax_East_Alumni"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Género"/>
+        <NamedIndividual IRI="#Plataforma"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Programador"/>
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Género"/>
+        <NamedIndividual IRI="#Puzzle"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Género"/>
+        <NamedIndividual IRI="#RPG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rogue"/>
+        <NamedIndividual IRI="#Rogue_Like"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Rogue"/>
+        <NamedIndividual IRI="#Rogue_Lite"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Género"/>
+        <NamedIndividual IRI="#Runner"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Rust_Bucket"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Género"/>
+        <NamedIndividual IRI="#Souls_Like"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Independiente"/>
@@ -514,6 +581,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cooperativo"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -549,6 +620,16 @@
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Celeste"/>
+        <NamedIndividual IRI="#Plataforma"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#ConformadaPor"/>
+        <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
+        <NamedIndividual IRI="#Lena_Raine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#David_Clark"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
@@ -562,6 +643,11 @@
         <ObjectProperty IRI="#Desarrolla"/>
         <NamedIndividual IRI="#Dodge_Roll"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <NamedIndividual IRI="#Rogue_Like"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
@@ -579,6 +665,11 @@
         <NamedIndividual IRI="#Team_Cherry"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+        <NamedIndividual IRI="#Souls_Like"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
         <NamedIndividual IRI="#Indie_Awards"/>
         <NamedIndividual IRI="#Celeste"/>
@@ -592,6 +683,11 @@
         <ObjectProperty IRI="#EsDesarrolladoPor"/>
         <NamedIndividual IRI="#Leap_Day"/>
         <NamedIndividual IRI="#Nitrome"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Leap_Day"/>
+        <NamedIndividual IRI="#Plataforma"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -609,9 +705,19 @@
         <NamedIndividual IRI="#Nitrome"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Mobile_Taquillero"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#Desarrolla"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Forma"/>
+        <NamedIndividual IRI="#Músico_de_ETG"/>
+        <NamedIndividual IRI="#Enter_the_Gungeon_-_Soundtrack"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -624,6 +730,16 @@
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <NamedIndividual IRI="#Plataforma"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Overcooked"/>
+        <NamedIndividual IRI="#Cocina"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
         <NamedIndividual IRI="#Pax_East_Alumni"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
@@ -632,6 +748,11 @@
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#Programador_de_ETG"/>
         <NamedIndividual IRI="#Dodge_Roll"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Rust_Bucket"/>
+        <NamedIndividual IRI="#Puzzle"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
@@ -653,6 +774,16 @@
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
         <NamedIndividual IRI="#King"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <NamedIndividual IRI="#Runner"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Ari_Gibson"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">35</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#Audience_Award"/>
@@ -687,6 +818,16 @@
         <DataProperty IRI="#Puntuación"/>
         <NamedIndividual IRI="#Celeste"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#David_Clark"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">42</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Diseñador_de_ETG"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">27</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Dimensión"/>
@@ -724,6 +865,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Heather_Stancliffe"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">32</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#Achievements"/>
         <NamedIndividual IRI="#Hollow_Knight"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
@@ -759,6 +905,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2018</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Jack_Vine"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">28</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#Achievements"/>
         <NamedIndividual IRI="#Leap_Day"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
@@ -782,6 +933,21 @@
         <DataProperty IRI="#Puntuación"/>
         <NamedIndividual IRI="#Leap_Day"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Maddy_Thorson"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">29</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Matthew_Annal"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">26</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Mobile_Taquillero"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2021</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
@@ -844,6 +1010,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Programador_de_ETG"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">34</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#Achievements"/>
         <NamedIndividual IRI="#Rust_Bucket"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
@@ -874,19 +1045,24 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Thomas_Mahler"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">24</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#William_Pellen"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">40</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#FechaDeLanzamiento"/>
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
-        <Literal>2021-03-05T00:00:00</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2021-03-05T00:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
-        <Literal>Onilne</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
-        <DataProperty IRI="#Plataforma"/>
-        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
-        <Literal>Mobile</Literal>
+        <Literal>Online</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
@@ -1007,10 +1183,6 @@
         <Class IRI="#Multijugador"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#Nombre"/>
-        <Class IRI="#Persona"/>
-    </DataPropertyDomain>
-    <DataPropertyDomain>
         <DataProperty IRI="#NúmeroDeIntegrantes"/>
         <Class IRI="#Banda_Sonora"/>
     </DataPropertyDomain>
@@ -1052,10 +1224,6 @@
             <Literal>Local</Literal>
             <Literal>Online</Literal>
         </DataOneOf>
-    </DataPropertyRange>
-    <DataPropertyRange>
-        <DataProperty IRI="#Nombre"/>
-        <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#NúmeroDeIntegrantes"/>
