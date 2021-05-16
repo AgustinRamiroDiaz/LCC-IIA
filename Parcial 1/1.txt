@@ -1,0 +1,77 @@
+UCS:
+
+Expando     LISTA
+A           [A(0)]
+D           [B(5), C(4), D(3)]
+C           [B(5), C(4), I(5), J(4), K(6)]
+J           [B(5), G(6), H(8), I(5), J(4), K(6)]
+B           [B(5), G(6), H(8), I(5), K(6)]
+I           [E(6), F(9), G(6), H(8), I(5), K(6)]
+E           [E(6), F(9), G(6), H(8), M(11), K(6)]
+G           [F(9), G(6), H(8), M(11), K(6)]
+K           [F(9), L(12), H(8), M(11), K(6)]
+H           [F(9), L(12), H(8), M(11)]
+F           [F(9), L(12), L(13), M(9), M(11)]
+M(9)        [L(14), L(12), L(13), M(9), M(11)] --> Meta
+
+i. Nodos expandidos: 15
+
+ii. Es óptimo? Sí ya que UCS siempre es óptimo
+
+iii. Garantiza ser óptimo? Sí ya que UCS siempre es óptimo
+
+
+
+Greedy (sin backtracking):
+
+Expando             Elijo
+A(5)                A
+B(3), C(4), D(2)    D
+I(3), J(1), K(2)    J
+
+i. Nodos expandidos: 7
+
+ii. Es óptimo? No, ni siquiera es completo
+
+iii. Garantiza ser óptimo? No se puede garantizar optimalidad
+
+
+
+Greedy (con backtracking):
+
+Expando     LISTA
+A           [A(5)]
+D           [B(3), C(4), D(2)]
+J           [B(3), C(4), I(3), J(1), K(2)]
+K           [B(3), C(4), I(3), K(2)]
+I           [B(3), C(4), I(3)]
+M           [B(3), C(4), M(0)]      -> Meta
+
+i. Nodos expandidos: 8
+
+ii. Es óptimo? No
+
+iii. Garantiza ser óptimo? No se puede garantizar optimalidad
+
+
+
+
+A*:
+Expando     LISTA
+A           [A(0+5=5)]
+D           [B(5+3=8), C(4+4=8), D(3+2=5)]
+J           [B(5+3=8), C(4+4=8), I(5+3=8), J(4+1=5), K(6+2=8)]
+B           [B(5+3=8), C(4+4=8), I(5+3=8), K(6+2=8)]
+E           [E(6+1=7), F(9+3=12), C(4+4=8), I(5+3=8), K(6+2=8)]
+G           [F(9+3=12), G(6+1=7), H(8+3=11), I(5+3=8), K(6+2=8)]
+I           [F(9+3=12), L(12+0=12), H(8+3=11), I(5+3=8), K(6+2=8)]
+K           [F(9+3=12), L(12+0=12), H(8+3=11), M(11+0=11), K(6+2=8)]
+H           [F(9+3=12), L(12+0=12), H(8+3=11), M(11+0=11)]
+M           [F(9+3=12), L(12+0=12), L(13+0=13), M(9+0=9), M(11+0=11)]   -> Meta
+
+i. Nodos expandidos: 13
+
+ii. Es óptimo? No
+
+iii. Garantiza ser óptimo? Si la heurística es admisible, A* es óptimo 
+

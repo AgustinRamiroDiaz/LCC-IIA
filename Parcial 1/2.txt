@@ -1,0 +1,40 @@
+1.
+Representación de Estados: 
+3-upla conformada por:
+    -Ciudad en la que estoy
+    -Conjunto de ciudades que me faltan recorrer
+    -Costo actual (perteneciente a los Naturales)
+
+Estado Inicial: ("Zurich", {"Madrid", "Londres", "Roma", "Berlín"}, 0)
+
+Estado Meta: ("Zurich", {}, costo)
+    donde costo es un valor arbitrario, 
+    el cual queremos que sea el menor costo posible del trayecto
+
+
+
+Acciones:
+avanzar:
+    (ciudad, Ciudades, costo) -> (nuevaCiudad, Ciudades-nuevaCiudad, costo + f(ciudad, nuevaCiudad))
+    donde:
+        nuevaCiudad pertenece a Ciudades
+        f es la función de distancia entre 2 ciudades
+        Ciudades != {}
+
+
+volverAZurich:
+    (ciudad, {}, costo) -> ("Zurich", {}, costo + f(ciudad, "Zurich"))
+    donde:
+        f es la función de distancia entre 2 ciudades
+        Notar que volverAZurich será la última acción a realizar para llegar al estado meta
+
+
+2.
+Propongo 2 heurísticas:
+-Heurística del estilo avára:
+    el costo de recorrer todas las ciudades siempre eligiendo la más cercana (terminando en Zurich, sin repetir ciudades)
+Notese que la heurística no es admisible
+
+-Una heurística admisible podría ser el costo de ir a la ciudad más lejana 
+de las que me faltan más el costo de volver a Zurich desde esa ciudad.
+Esta heurística es admisible si las distancias son euclídeas
