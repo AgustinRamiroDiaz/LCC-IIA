@@ -140,7 +140,19 @@
         <NamedIndividual IRI="#Audience_Award"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#British_Academy_Games_Awards"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Celeste"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#David_Clark"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Diseñador_de_ETG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dodge_Roll"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
@@ -149,13 +161,52 @@
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Heather_Stancliffe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Lena_Raine"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Maddy_Thorson"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Matthew_Annal"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Músico_de_ETG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#NAVGTR_awards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Nitrome"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Overcooked"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Pax_East_Alumni"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Programador_de_ETG"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Game_Awards"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Thomas_Mahler"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="#Cooperativo"/>
@@ -282,8 +333,24 @@
         <NamedIndividual IRI="#Audience_Award"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#British_Academy_Games_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
         <NamedIndividual IRI="#Celeste"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Programador"/>
+        <NamedIndividual IRI="#David_Clark"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diseñador"/>
+        <NamedIndividual IRI="#Diseñador_de_ETG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Independiente"/>
+        <NamedIndividual IRI="#Dodge_Roll"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cooperativo"/>
@@ -298,12 +365,48 @@
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Programador"/>
+        <NamedIndividual IRI="#Heather_Stancliffe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Músico"/>
         <NamedIndividual IRI="#Lena_Raine"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Diseñador"/>
         <NamedIndividual IRI="#Maddy_Thorson"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Programador"/>
+        <NamedIndividual IRI="#Matthew_Annal"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Corporación"/>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Músico"/>
+        <NamedIndividual IRI="#Músico_de_ETG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#NAVGTR_awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Independiente"/>
+        <NamedIndividual IRI="#Nitrome"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Cooperativo"/>
@@ -317,14 +420,60 @@
         <Class IRI="#Versus"/>
         <NamedIndividual IRI="#Overcooked"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Pax_East_Alumni"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Programador"/>
+        <NamedIndividual IRI="#Programador_de_ETG"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#The_Game_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Diseñador"/>
+        <NamedIndividual IRI="#Thomas_Mahler"/>
+    </ClassAssertion>
     <DifferentIndividuals>
         <NamedIndividual IRI="#Celeste"/>
         <NamedIndividual IRI="#Overcooked"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#British_Academy_Games_Awards"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsDesarrolladoPor"/>
         <NamedIndividual IRI="#Celeste"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#David_Clark"/>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Diseñador_de_ETG"/>
+        <NamedIndividual IRI="#Dodge_Roll"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <NamedIndividual IRI="#Dodge_Roll"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Heather_Stancliffe"/>
+        <NamedIndividual IRI="#Nitrome"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -336,10 +485,55 @@
         <NamedIndividual IRI="#Maddy_Thorson"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Matthew_Annal"/>
+        <NamedIndividual IRI="#Nitrome"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Músico_de_ETG"/>
+        <NamedIndividual IRI="#Dodge_Roll"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#NAVGTR_awards"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Pax_East_Alumni"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Programador_de_ETG"/>
+        <NamedIndividual IRI="#Dodge_Roll"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#The_Game_Awards"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Thomas_Mahler"/>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#Audience_Award"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#int">2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#British_Academy_Games_Awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2016</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Dimensión"/>
@@ -392,6 +586,36 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Golden_Joystick_Awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#NAVGTR_awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-04-27T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <Literal>Console</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Puntuación"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Overcooked"/>
         <Literal>Local</Literal>
@@ -400,6 +624,16 @@
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Overcooked"/>
         <Literal>Online</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Pax_East_Alumni"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#The_Game_Awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
