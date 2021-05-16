@@ -364,12 +364,32 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#Puntuación"/>
         <NamedIndividual IRI="#Celeste"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">9.1</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.8</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-05-05T00:00:00</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
         <Literal>Local</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <Literal>Console</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <Literal>PC</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Puntuación"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.4</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#MetodoDeJuego"/>
