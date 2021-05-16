@@ -254,6 +254,9 @@
         <NamedIndividual IRI="#Souls_Like"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Team17"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Team_Cherry"/>
     </Declaration>
     <Declaration>
@@ -565,6 +568,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Independiente"/>
+        <NamedIndividual IRI="#Team17"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Independiente"/>
         <NamedIndividual IRI="#Team_Cherry"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -753,6 +760,11 @@
         <ObjectProperty IRI="#PerteneceA"/>
         <NamedIndividual IRI="#Rust_Bucket"/>
         <NamedIndividual IRI="#Puzzle"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <NamedIndividual IRI="#Team17"/>
+        <NamedIndividual IRI="#Overcooked"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
