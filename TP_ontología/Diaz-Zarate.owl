@@ -95,6 +95,12 @@
         <ObjectProperty IRI="#PerteneceA"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#Suena"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TocaPara"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#TrabajaEn"/>
     </Declaration>
     <Declaration>
@@ -637,6 +643,11 @@
         <NamedIndividual IRI="#Lena_Raine"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TocaPara"/>
+        <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
+        <NamedIndividual IRI="#Celeste"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#David_Clark"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
@@ -657,6 +668,11 @@
         <NamedIndividual IRI="#Rogue_Like"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TocaPara"/>
+        <NamedIndividual IRI="#Enter_the_Gungeon_-_Soundtrack"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
         <NamedIndividual IRI="#Golden_Joystick_Awards"/>
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
@@ -675,6 +691,11 @@
         <ObjectProperty IRI="#PerteneceA"/>
         <NamedIndividual IRI="#Hollow_Knight"/>
         <NamedIndividual IRI="#Souls_Like"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TocaPara"/>
+        <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
+        <NamedIndividual IRI="#Hollow_Knight"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
@@ -790,6 +811,11 @@
         <ObjectProperty IRI="#PerteneceA"/>
         <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
         <NamedIndividual IRI="#Runner"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TocaPara"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Edad"/>
@@ -1112,8 +1138,15 @@
         <ObjectProperty IRI="#EsGanadoPor"/>
         <ObjectProperty IRI="#Gana"/>
     </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Suena"/>
+        <ObjectProperty IRI="#TocaPara"/>
+    </InverseObjectProperties>
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#EsGanadoPor"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#Suena"/>
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
@@ -1147,6 +1180,14 @@
         <Class IRI="#Videojuego"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Suena"/>
+        <Class IRI="#Videojuego"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TocaPara"/>
+        <Class IRI="#Banda_Sonora"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#TrabajaEn"/>
         <Class IRI="#Persona"/>
     </ObjectPropertyDomain>
@@ -1165,6 +1206,14 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#PerteneceA"/>
         <Class IRI="#Género"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Suena"/>
+        <Class IRI="#Banda_Sonora"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TocaPara"/>
+        <Class IRI="#Videojuego"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#TrabajaEn"/>
