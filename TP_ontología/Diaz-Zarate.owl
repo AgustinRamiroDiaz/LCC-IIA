@@ -1,0 +1,366 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/aldana/ontologies/2021/4/Diaz-Zarate-Ontologia"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/aldana/ontologies/2021/4/Diaz-Zarate-Ontologia">
+    <Prefix name="" IRI="http://www.semanticweb.org/aldana/ontologies/2021/4/untitled-ontology-8#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Una ontología sobre los videojuegos.</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Banda_Sonora"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cooperativo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Corporación"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diseñador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estudio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Género"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Independiente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Multijugador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Músico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Persona"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Plataforma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Premios"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Programador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RPG"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Rogue"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Simulación"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Souls-like"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Un_solo_jugador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Versus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Videojuego"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ConformadaPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Desarrolla"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EmpleaA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EsElEstiloDeUn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Forma"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Gana"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PerteneceA"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#SonGanadosPor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TrabajaEn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Achievements"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Dimensión"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Edad"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MetodoDeJuego"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Nombre"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NúmeroDeIntegrantes"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Plataforma"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Puntuación"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Cooperativo"/>
+        <Class IRI="#Multijugador"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Corporación"/>
+        <Class IRI="#Estudio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diseñador"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Independiente"/>
+        <Class IRI="#Estudio"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multijugador"/>
+        <Class IRI="#Videojuego"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Músico"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Plataforma"/>
+        <Class IRI="#Género"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Programador"/>
+        <Class IRI="#Persona"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RPG"/>
+        <Class IRI="#Género"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Rogue"/>
+        <Class IRI="#Género"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Simulación"/>
+        <Class IRI="#Género"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Souls-like"/>
+        <Class IRI="#Género"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Un_solo_jugador"/>
+        <Class IRI="#Videojuego"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Versus"/>
+        <Class IRI="#Multijugador"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Corporación"/>
+        <Class IRI="#Independiente"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#EsElEstiloDeUn"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#ConformadaPor"/>
+        <ObjectProperty IRI="#Forma"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#EmpleaA"/>
+        <ObjectProperty IRI="#TrabajaEn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#EsElEstiloDeUn"/>
+        <ObjectProperty IRI="#PerteneceA"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#Gana"/>
+        <ObjectProperty IRI="#SonGanadosPor"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#SonGanadosPor"/>
+    </FunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Desarrolla"/>
+    </InverseFunctionalObjectProperty>
+    <InverseFunctionalObjectProperty>
+        <ObjectProperty IRI="#Gana"/>
+    </InverseFunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Desarrolla"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Forma"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#PerteneceA"/>
+    </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <Class IRI="#Estudio"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Forma"/>
+        <Class IRI="#Músico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Gana"/>
+        <Class IRI="#Videojuego"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <Class IRI="#Videojuego"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <Class IRI="#Persona"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Desarrolla"/>
+        <Class IRI="#Videojuego"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Forma"/>
+        <Class IRI="#Banda_Sonora"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Gana"/>
+        <Class IRI="#Premios"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#PerteneceA"/>
+        <Class IRI="#Género"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <Class IRI="#Estudio"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Achievements"/>
+        <Class IRI="#Videojuego"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <Class IRI="#Premios"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Dimensión"/>
+        <Class IRI="#Videojuego"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Edad"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <Class IRI="#Videojuego"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <Class IRI="#Multijugador"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Nombre"/>
+        <Class IRI="#Persona"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NúmeroDeIntegrantes"/>
+        <Class IRI="#Banda_Sonora"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Plataforma"/>
+        <Class IRI="#Videojuego"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Puntuación"/>
+        <Class IRI="#Videojuego"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#Achievements"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Edad"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Nombre"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NúmeroDeIntegrantes"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Puntuación"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
