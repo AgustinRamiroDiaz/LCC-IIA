@@ -137,6 +137,12 @@
         <DataProperty IRI="#Puntuación"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Celeste"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Overcooked"/>
     </Declaration>
     <SubClassOf>
@@ -260,9 +266,33 @@
         <Class IRI="#Videojuego"/>
     </DisjointClasses>
     <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Celeste"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cooperativo"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Cooperativo"/>
         <NamedIndividual IRI="#Overcooked"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Un_solo_jugador"/>
+        <NamedIndividual IRI="#Overcooked"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Versus"/>
+        <NamedIndividual IRI="#Overcooked"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Celeste"/>
+        <NamedIndividual IRI="#Overcooked"/>
+    </DifferentIndividuals>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
@@ -304,9 +334,6 @@
     </FunctionalObjectProperty>
     <InverseFunctionalObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
-    </InverseFunctionalObjectProperty>
-    <InverseFunctionalObjectProperty>
-        <ObjectProperty IRI="#Gana"/>
     </InverseFunctionalObjectProperty>
     <AsymmetricObjectProperty>
         <ObjectProperty IRI="#Desarrolla"/>
