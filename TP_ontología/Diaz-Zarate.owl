@@ -149,6 +149,9 @@
         <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Christopher_Larkin"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Cocina"/>
     </Declaration>
     <Declaration>
@@ -168,6 +171,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gareth_Coker"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Golden_Joystick_Awards"/>
@@ -277,6 +283,54 @@
     <Declaration>
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Banda_Sonora"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#ConformadaPor"/>
+            <Class IRI="#Músico"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Estudio"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#EmpleaA"/>
+            <Class IRI="#Persona"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Independiente"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Independiente"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#EmpleaA"/>
+                <Class IRI="#Persona"/>
+            </ObjectSomeValuesFrom>
+            <ObjectMaxCardinality cardinality="50">
+                <ObjectProperty IRI="#EmpleaA"/>
+            </ObjectMaxCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Premio"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#EsGanadoPor"/>
+            <Class IRI="#Videojuego"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Videojuego"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#PerteneceA"/>
+            <Class IRI="#Género"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Videojuego"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#EsDesarrolladoPor"/>
+            <Class IRI="#Estudio"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Cooperativo"/>
         <Class IRI="#Multijugador"/>
@@ -414,6 +468,10 @@
         <NamedIndividual IRI="#Celeste_Original_Soundtrack"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Músico"/>
+        <NamedIndividual IRI="#Christopher_Larkin"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Simulación"/>
         <NamedIndividual IRI="#Cocina"/>
     </ClassAssertion>
@@ -444,6 +502,10 @@
     <ClassAssertion>
         <Class IRI="#Independiente"/>
         <NamedIndividual IRI="#Extremely_OK_Games"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Músico"/>
+        <NamedIndividual IRI="#Gareth_Coker"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Premio"/>
@@ -645,6 +707,11 @@
         <NamedIndividual IRI="#Celeste"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Forma"/>
+        <NamedIndividual IRI="#Christopher_Larkin"/>
+        <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#David_Clark"/>
         <NamedIndividual IRI="#Moon_Studios_GmbH"/>
@@ -668,6 +735,16 @@
         <ObjectProperty IRI="#TocaPara"/>
         <NamedIndividual IRI="#Enter_the_Gungeon_-_Soundtrack"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#Forma"/>
+        <NamedIndividual IRI="#Gareth_Coker"/>
+        <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabajaEn"/>
+        <NamedIndividual IRI="#Gareth_Coker"/>
+        <NamedIndividual IRI="#Moon_Studios_GmbH"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
@@ -893,6 +970,11 @@
         <DataProperty IRI="#Puntuación"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.4</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Edad"/>
+        <NamedIndividual IRI="#Gareth_Coker"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">40</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
