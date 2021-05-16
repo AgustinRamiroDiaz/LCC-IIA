@@ -179,7 +179,13 @@
         <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Indie_Awards"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Jack_Vine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#King"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Leap_Day"/>
@@ -231,6 +237,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#William_Pellen"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
@@ -416,8 +425,16 @@
         <NamedIndividual IRI="#Hollow_Knight_-_Official_Soundtrack"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Indie_Awards"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Programador"/>
         <NamedIndividual IRI="#Jack_Vine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Corporación"/>
+        <NamedIndividual IRI="#King"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Un_solo_jugador"/>
@@ -496,6 +513,14 @@
         <NamedIndividual IRI="#William_Pellen"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Cooperativo"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Versus"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Banda_Sonora"/>
         <NamedIndividual IRI="#Ori_and_the_Blind_Forest_(Original_Soundtrack)"/>
     </ClassAssertion>
@@ -507,6 +532,11 @@
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#Ari_Gibson"/>
         <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Audience_Award"/>
+        <NamedIndividual IRI="#Celeste"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#EsGanadoPor"/>
@@ -547,6 +577,11 @@
         <ObjectProperty IRI="#EsDesarrolladoPor"/>
         <NamedIndividual IRI="#Hollow_Knight"/>
         <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Indie_Awards"/>
+        <NamedIndividual IRI="#Celeste"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -612,6 +647,11 @@
         <ObjectProperty IRI="#TrabajaEn"/>
         <NamedIndividual IRI="#William_Pellen"/>
         <NamedIndividual IRI="#Team_Cherry"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsDesarrolladoPor"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <NamedIndividual IRI="#King"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#AñoOtorgamiento"/>
@@ -714,6 +754,11 @@
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#float">8.7</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Indie_Awards"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2018</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#Achievements"/>
         <NamedIndividual IRI="#Leap_Day"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
@@ -809,11 +854,6 @@
         <Literal>2d</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
-        <DataProperty IRI="#FechaDeLanzamiento"/>
-        <NamedIndividual IRI="#Rust_Bucket"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2015-12-17T00:00:00</Literal>
-    </DataPropertyAssertion>
-    <DataPropertyAssertion>
         <DataProperty IRI="#Plataforma"/>
         <NamedIndividual IRI="#Rust_Bucket"/>
         <Literal>Mobile</Literal>
@@ -832,6 +872,21 @@
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#The_Game_Awards"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#FechaDeLanzamiento"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <Literal>2021-03-05T00:00:00</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#MetodoDeJuego"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <Literal>Onilne</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#Plataforma"/>
+        <NamedIndividual IRI="#Crash_Bandicoot:_On_the_Run!"/>
+        <Literal>Mobile</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#Desarrolla"/>
