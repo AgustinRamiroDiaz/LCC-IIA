@@ -239,6 +239,9 @@
         <NamedIndividual IRI="#Plataforma"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#Premio_De_La_Salsa"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </Declaration>
     <Declaration>
@@ -600,6 +603,10 @@
         <NamedIndividual IRI="#Plataforma"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Premio"/>
+        <NamedIndividual IRI="#Premio_De_La_Salsa"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Programador"/>
         <NamedIndividual IRI="#Programador_de_ETG"/>
     </ClassAssertion>
@@ -845,6 +852,11 @@
         <ObjectProperty IRI="#EsGanadoPor"/>
         <NamedIndividual IRI="#Pax_East_Alumni"/>
         <NamedIndividual IRI="#Enter_The_Gungeon"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#EsGanadoPor"/>
+        <NamedIndividual IRI="#Premio_De_La_Salsa"/>
+        <NamedIndividual IRI="#Overcooked"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#TrabajaEn"/>
@@ -1135,6 +1147,11 @@
         <DataProperty IRI="#AñoOtorgamiento"/>
         <NamedIndividual IRI="#Pax_East_Alumni"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2015</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#AñoOtorgamiento"/>
+        <NamedIndividual IRI="#Premio_De_La_Salsa"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">2016</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#Edad"/>
