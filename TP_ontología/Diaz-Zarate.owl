@@ -310,6 +310,7 @@
             </ObjectSomeValuesFrom>
             <ObjectMaxCardinality cardinality="50">
                 <ObjectProperty IRI="#EmpleaA"/>
+                <Class IRI="#Persona"/>
             </ObjectMaxCardinality>
         </ObjectIntersectionOf>
     </EquivalentClasses>
