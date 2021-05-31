@@ -1,6 +1,6 @@
 [System]
-Name='New FIS'
-Ninputs=4
+Name='Metroidvania'
+Ninputs=3
 Noutputs=1
 Nrules=9
 Nexceptions=0
@@ -9,15 +9,6 @@ MissingValues='random'
 
 [Input1]
 Active='yes'
-Name='Nivel de Dificultad'
-Range=[       0.000 ,      10.000 ]
-NMFs=3
-MF1='baja','SemiTrapezoidalInf',[       0.000 ,       3.000 ,       5.000 ]
-MF2='media','triangular',[       3.000 ,       5.000 ,       8.000 ]
-MF3='alta','SemiTrapezoidalSup',[       5.000 ,       8.000 ,      10.000 ]
-
-[Input2]
-Active='yes'
 Name='Tamaño de Mapa'
 Range=[       0.000 ,     100.000 ]
 NMFs=3
@@ -25,7 +16,7 @@ MF1='pequeño','SemiTrapezoidalInf',[       0.000 ,      30.000 ,      50.000 ]
 MF2='mediano','triangular',[      30.000 ,      50.000 ,      80.000 ]
 MF3='grande','SemiTrapezoidalSup',[      50.000 ,      80.000 ,     100.000 ]
 
-[Input3]
+[Input2]
 Active='yes'
 Name='Cantidad de Habilidades'
 Range=[       0.000 ,      10.000 ]
@@ -34,7 +25,7 @@ MF1='pocas','SemiTrapezoidalInf',[       0.000 ,       2.000 ,       5.000 ]
 MF2='normal','triangular',[       2.000 ,       5.000 ,       8.000 ]
 MF3='muchas','SemiTrapezoidalSup',[       5.000 ,       8.000 ,      10.000 ]
 
-[Input4]
+[Input3]
 Active='yes'
 Name='Especies de Enemigos'
 Range=[       0.000 ,      30.000 ]
@@ -58,14 +49,14 @@ MF2='moderadamente','triangular',[       2.000 ,       5.000 ,       8.000 ]
 MF3='fuertemente','SemiTrapezoidalSup',[       5.000 ,       8.000 ,      13.606 ]
 
 [Rules]
-0, 1, 0, 0,        1.000 ,
-0, 0, 1, 0,        1.000 ,
-0, 0, 0, 1,        1.000 ,
-0, 2, 0, 0,        2.000 ,
-0, 0, 2, 0,        2.000 ,
-0, 0, 0, 2,        2.000 ,
-0, 3, 0, 0,        3.000 ,
-0, 0, 3, 0,        3.000 ,
-0, 0, 0, 3,        3.000 ,
+1, 0, 0,        1.000 ,
+0, 1, 0,        1.000 ,
+0, 0, 1,        1.000 ,
+2, 0, 0,        2.000 ,
+0, 2, 0,        2.000 ,
+0, 0, 2,        2.000 ,
+3, 0, 0,        3.000 ,
+0, 3, 0,        3.000 ,
+0, 0, 3,        3.000 ,
 
 [Exceptions]
