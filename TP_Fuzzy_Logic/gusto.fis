@@ -2,7 +2,7 @@
 Name='Gusto'
 Ninputs=2
 Noutputs=1
-Nrules=9
+Nrules=6
 Nexceptions=0
 Conjunction='min'
 MissingValues='random'
@@ -40,14 +40,11 @@ MF2='interesante','triangular',[      50.000 ,      70.000 ,      90.000 ]
 MF3='mucho','SemiTrapezoidalSup',[      70.000 ,      90.000 ,     120.817 ]
 
 [Rules]
-1, 3,        1.000 ,
+1, 0,        1.000 ,
 2, 2,        2.000 ,
 3, 1,        3.000 ,
-3, 2,        3.000 ,
-1, 2,        1.000 ,
-2, 3,        1.000 ,
-1, 1,        2.000 ,
-2, 1,        3.000 ,
-3, 3,        2.000 ,
+3, 2,        2.000 ,
+2, 1,        2.000 ,
+0, 3,        1.000 ,
 
 [Exceptions]
