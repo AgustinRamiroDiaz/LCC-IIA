@@ -32,43 +32,53 @@ totalKFolds = 10
 
 indexData <- createFolds(glass$Type.of.glass, k = totalKFolds) #creamos los kfolds
 
-method = 'gini'
-
-kfold = 3 #elegimos el indice para testear
+ModelParametersAndMetrics <- data.frame(
+    method = character(),
+    cp = numeric(),
+    accuracy = numeric()
+)
 
 for (kfold in 1:totalKFolds) {
+    methods <- c('gini', 'information')
+    for (method in methods) {
+        
+        # Partimos los conjuntos en entrenamiento y test
+        glassTest <- glass[indexData[[kfold]], ] 
+        
+        glassTrain <- glass[setdiff(seq(1:nrow(glass)), indexData[[kfold]]), ] 
+        
+        #--------------------Entrenamiento--------------------
+        fittedModel <- rpart(Type.of.glass ~ ., data = glassTrain, parms = list(split = method))
+        
+        #--------------Predicciones--------------------------
+        
+        possibleCPs <- 0:10 / 10 # 0:100 / 100
+        for (cp in possibleCPs) {
+            fittedPrunedModel <- prune(fittedModel, cp=cp)
+            
+            predictGlassPruned <- predict(fittedPrunedModel, glassTest[, -length(glassTest)], type = 'class')
+            cm <- confusionMatrix(predictGlassPruned, glassTest[, length(glassTest)])
+            
+            log <- data.frame(
+                method = method,
+                cp = cp,
+                accuracy = cm$overall[['Accuracy']]
+            )
+            
+            ModelParametersAndMetrics <- rbind(ModelParametersAndMetrics, log)
+        }
+    } 
+}
 
-glassTest <- glass[indexData[[kfold]], ] #con esto testeamos
-
-glassTrain <- glass[setdiff(seq(1:dim(glass)[1]),
-indexData[[kfold]]), ]  #con esto entrenamos
-
-#--------------------Entrenamiento--------------------
-fit1 <- rpart(Type.of.glass ~ ., data = glassTrain, parms = list(split = method))
-fit1Pruned <- prune(fit1, cp=0.1)
+print(ModelParametersAndMetrics %>% group_by(method) %>% summarise(avg = mean(accuracy)))
+print(ModelParametersAndMetrics %>% group_by(cp) %>% summarise(avg = mean(accuracy)))
+print(ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'gini',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)))
 
 #Plot del modelo entero
-fancyRpartPlot(fit1, caption = "information method")
-
+#fancyRpartPlot(fittedModel, caption = "information method")
 #Plot del modelo podado
-fancyRpartPlot(fit1Pruned, caption = "information method pruned")
+#fancyRpartPlot(fittedPrunedModel, caption = "information method pruned")
 
-#--------------Predicciones--------------------------
-
-#Predicciones sin poda
-predictGlass <- predict(fit1, glassTest[, -length(glassTest)], type = 'class')
-
-table_mat <- table(t(glassTest[, length(glassTest)]), predictGlass)
-
-accuracy_Test_not_pruned <- sum(diag(table_mat)) / sum(table_mat)
-
-#Predicciones con poda
-
-predictGlassPruned <- predict(fit1Pruned, glassTest[, -length(glassTest)], type = 'class')
-table_mat_pruned <- table(t(glassTest[, length(glassTest)]), predictGlassPruned)
-accuracy_Test_pruned <- sum(diag(table_mat_pruned)) / sum(table_mat_pruned)
-
-}
 
 
 # [1, 2, 3, 4, 5] [7, 8] 
