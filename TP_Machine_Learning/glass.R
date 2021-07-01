@@ -32,7 +32,7 @@ glass$Type.of.glass <- as.factor(glass$Type.of.glass) #para que ande el createFo
 totalKFolds = 12
 kFoldsTrain = 1:10
 kFoldsTest = setdiff(1:totalKFolds, kFoldsTrain)
-indexData <- createFolds(glass$Type.of.glass, k = totalKFolds) #creamos los kfolds
+indexData <- createFolds(glass$Type.of.glass, k = totalKFolds)
 
 ModelParametersAndMetrics <- data.frame(
     method = character(),
@@ -79,8 +79,9 @@ ModelParametersAndMetrics %>% group_by(method) %>% summarise(avg = mean(accuracy
 ModelParametersAndMetrics %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
 ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'gini',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
 
-# Definimos el cp en base a observaciones
+# Definimos los parámetros del modelo en base al análisis sobre las métricas
 cp = 0
+method = 'gini'
 
 # Training with entire train dataset
 
