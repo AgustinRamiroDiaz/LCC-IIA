@@ -3,6 +3,7 @@ library (caret)
 library (rpart)
 library(rattle)
 library(rpart.plot)
+library(dplyr)
 
 # Carga de datos
 glass <- read.csv("glass.csv")
@@ -20,16 +21,17 @@ glassTypeNumberToText <- c(
 
 glass$Id <- NULL
 
-#glass$Type.of.glass <- unlist(Map(function(number) glassTypeNumberToText[number], glass$Type.of.glass))
+glass$Type.of.glass <- unlist(Map(function(number) glassTypeNumberToText[number], glass$Type.of.glass))
 
 # Convertimos en Factores para el árbol de decisión
 glass$Type.of.glass <- as.factor(glass$Type.of.glass) #para que ande el createFolds con las clases
 
 
-totalKFolds = 10
-# trainPercentage = 80
-# testPercentage = 20
 
+# KFold Cross Validation
+totalKFolds = 12
+kFoldsTrain = 1:10
+kFoldsTest = setdiff(1:totalKFolds, kFoldsTrain)
 indexData <- createFolds(glass$Type.of.glass, k = totalKFolds) #creamos los kfolds
 
 ModelParametersAndMetrics <- data.frame(
@@ -38,14 +40,15 @@ ModelParametersAndMetrics <- data.frame(
     accuracy = numeric()
 )
 
-for (kfold in 1:totalKFolds) {
+
+for (kfold in kFoldsTrain) {
     methods <- c('gini', 'information')
     for (method in methods) {
         
         # Partimos los conjuntos en entrenamiento y test
         glassTest <- glass[indexData[[kfold]], ] 
         
-        glassTrain <- glass[setdiff(seq(1:nrow(glass)), indexData[[kfold]]), ] 
+        glassTrain <- glass[-indexData[[kfold]], ] 
         
         #--------------------Entrenamiento--------------------
         fittedModel <- rpart(Type.of.glass ~ ., data = glassTrain, parms = list(split = method))
@@ -56,8 +59,8 @@ for (kfold in 1:totalKFolds) {
         for (cp in possibleCPs) {
             fittedPrunedModel <- prune(fittedModel, cp=cp)
             
-            predictGlassPruned <- predict(fittedPrunedModel, glassTest[, -length(glassTest)], type = 'class')
-            cm <- confusionMatrix(predictGlassPruned, glassTest[, length(glassTest)])
+            predictGlassPruned <- predict(fittedPrunedModel, glassTest[, -ncol(glassTest)], type = 'class')
+            cm <- confusionMatrix(predictGlassPruned, glassTest[, ncol(glassTest)])
             
             log <- data.frame(
                 method = method,
@@ -70,9 +73,34 @@ for (kfold in 1:totalKFolds) {
     } 
 }
 
-print(ModelParametersAndMetrics %>% group_by(method) %>% summarise(avg = mean(accuracy)))
-print(ModelParametersAndMetrics %>% group_by(cp) %>% summarise(avg = mean(accuracy)))
-print(ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'gini',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)))
+# Análisis sobre las métricas
+ModelParametersAndMetrics %>% group_by(method, cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+ModelParametersAndMetrics %>% group_by(method) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+ModelParametersAndMetrics %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'gini',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+
+# Definimos el cp en base a observaciones
+cp = 0
+
+# Training with entire train dataset
+
+trainIndexes <- unlist(indexData[kFoldsTrain], use.names = F)
+glassTrain <- glass[trainIndexes, ]
+glassTest <- glass[-trainIndexes, ]
+
+fittedModel <- rpart(Type.of.glass ~ ., data = glassTrain, parms = list(split = method))
+
+fittedPrunedModel <- prune(fittedModel, cp=0)
+
+# Testing final model
+predictGlassPruned <- predict(fittedPrunedModel, glassTest[, -ncol(glassTest)], type = 'class')
+cm <- confusionMatrix(predictGlassPruned, glassTest[, ncol(glassTest)])
+
+print(cm$table)
+print(cm$overall)
+print(cm$byClass)
+
+
 
 #Plot del modelo entero
 #fancyRpartPlot(fittedModel, caption = "information method")
