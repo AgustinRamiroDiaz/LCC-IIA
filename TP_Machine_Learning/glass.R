@@ -55,7 +55,7 @@ for (kfold in kFoldsTrain) {
         
         #--------------Predicciones--------------------------
         
-        possibleCPs <- 0:10 / 10 # 0:100 / 100
+        possibleCPs <- 0:30 / 100 # 0:100 / 100
         for (cp in possibleCPs) {
             fittedPrunedModel <- prune(fittedModel, cp=cp)
             
@@ -78,10 +78,42 @@ ModelParametersAndMetrics %>% group_by(method, cp) %>% summarise(avg = mean(accu
 ModelParametersAndMetrics %>% group_by(method) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
 ModelParametersAndMetrics %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
 ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'gini',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+ModelParametersAndMetrics[ModelParametersAndMetrics$method == 'information',] %>% group_by(cp) %>% summarise(avg = mean(accuracy)) %>% arrange(-avg)
+
+#gini
+# cp   avg
+# <dbl> <dbl>
+# 1  0.05 0.686
+# 2  0.04 0.680
+# 3  0    0.679
+# 4  0.01 0.679
+# 5  0.02 0.673
+# 6  0.03 0.668
+# 7  0.06 0.634
+# 8  0.07 0.601
+# 9  0.08 0.597
+# 10  0.09 0.597
+
+#information
+# cp   avg
+# <dbl> <dbl>
+#   0.02 0.691
+# 2  0    0.685
+# 3  0.01 0.685
+# 4  0.03 0.681
+# 5  0.05 0.670
+# 6  0.04 0.653
+# 7  0.06 0.619
+# 8  0.07 0.612
+# 9  0.08 0.584
+# 10  0.09 0.584
 
 # Definimos los parámetros del modelo en base al análisis sobre las métricas
-cp = 0
+cp = 0.05
 method = 'gini'
+
+# cp = 0.02
+# method = 'information'
 
 # Training with entire train dataset
 
@@ -91,32 +123,33 @@ glassTest <- glass[-trainIndexes, ]
 
 fittedModel <- rpart(Type.of.glass ~ ., data = glassTrain, parms = list(split = method))
 
-fittedPrunedModel <- prune(fittedModel, cp=0)
+fittedPrunedModel <- prune(fittedModel, cp=cp)
+
+#fancyRpartPlot(fittedPrunedModel, caption = NULL)
+#summary(fittedPrunedModel)
 
 # Testing final model
 predictGlassPruned <- predict(fittedPrunedModel, glassTest[, -ncol(glassTest)], type = 'class')
 cm <- confusionMatrix(predictGlassPruned, glassTest[, ncol(glassTest)])
 
-print(cm$table)
-print(cm$overall)
-print(cm$byClass)
+print(cm$table) #matriz de confusion
+print(cm$overall)   #accuracy en general
+print(cm$byClass)   #metricas por clase
 
+#Precision
+precision <- cm$byClass[,5]
+precision[is.na(precision)] <- 0 #removemos los Nan para que el promedio sea significativo
 
+meanPrecision <- mean(precision)
 
-#Plot del modelo entero
-#fancyRpartPlot(fittedModel, caption = "information method")
-#Plot del modelo podado
-#fancyRpartPlot(fittedPrunedModel, caption = "information method pruned")
+#Recall
+recall <- cm$byClass[,6]
+recall[is.na(recall)] <- 0 #removemos los Nan para que el promedio sea significativo
 
+meanRecall <- mean(recall)
 
+#Specifity
+specifity <- cm$byClass[,2]
+specifity[is.na(specifity)] <- 0 #removemos los Nan para que el promedio sea significativo
 
-# [1, 2, 3, 4, 5] [7, 8] 
-# Train        Test   Params        Model       Metrica
-# [2, 3, 4, 5] [1]    ->         -> 
-# [1, 3, 4, 5] [2]    -> 
-# [1, 2, 4, 5] [3]    -> 
-
-# [1, 2, 3, 4, 5] -> Model
-
-# method  |   cp  |   accuracy    | recesion   
-# gini    |   0.1 |   0.5         | 0.4
+meanSpecifity <- mean(specifity)
